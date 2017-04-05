@@ -7,7 +7,6 @@
     "styles/component.scss"
   ],
   "scripts": [
-    "scripts/vendor/vue2.6.js",
     "scripts/component.js"
   ]
 }
