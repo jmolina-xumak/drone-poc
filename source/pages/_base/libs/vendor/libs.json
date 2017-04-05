@@ -1,0 +1,14 @@
+{
+  "id": "vendor",
+  "priority": 55,
+  "assets": [
+  ],
+  "styles": [
+    "foundation/css/foundation.css"
+  ],
+  "scripts": [
+    "jquery/jquery-2.2.4.js",
+    "foundation/js/foundation.js",
+    "foundation/js/app.js"
+  ]
+}
