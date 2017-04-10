@@ -2,6 +2,8 @@
   "id": "vendor",
   "priority": 55,
   "assets": [
+    "fonts/HurmeGeometricSans3/HurmeGeometricSans3.otf",
+    "fonts/SourceSansPro/SourceSansPro-lt.otf"
   ],
   "styles": [
     "foundation/css/foundation.css"

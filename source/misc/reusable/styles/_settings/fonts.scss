@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "HurmeGeometricSans";
+	src: url("vendor/fonts/HurmeGeometricSans3.otf?") format("otf");
+}
+
+@font-face {
+	font-family: "SourceSansPro";
+	src: url("vendor/fonts/SourceSansPro-lt.otf?") format("otf");
+}
+
+
+$font-hurme-geometric-sans : 'HurmeGeometricSans', Arial; 
+
+$font-source-sans-pro : 'SourceSansPro', Arial; 
