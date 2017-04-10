@@ -1,55 +1,24 @@
-<div class="row">
-    <section>
-        <div id="app" v-bind:class="color">
-            <!--definicion de id para VueJS-->
 
-            <ul>
-                <li v-for="user in users">{{ user.name }}</li>
-                <!--recorrer array de objetos-->
+<section id="app1">
+    <h2>
+        Menu
+    </h2>
+    <menu-accesibility></menu-accesibility>
+  
+   
+</section>
+
+  <script type="text/x-template" id="menu">
+        <nav class="menu">
+            <ul class="menu-mainList">
+                <li v-for="item in menu.items" v-on:keyup.enter="enterItem(item)" class="menu-item" tabindex="0" v-bind:aria-expanded="[item.ariaExpandend]">
+                    <span>{{ item.text }}</span>
+                    <ul class="menu-SubList" v-show="item.submenu.ariaHidden" v-bind:aria-hidden="[item.submenu.ariaHidden]">
+                        <li v-for="subitem in item.submenu.items" class="menu-subitem">
+                            <a v-on:keyup="subItemEvent" href="#">submenu1</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
-
-            <hr/>
-
-            <span v-bind:title="message"> <!--texto dinamico-->
-            Hover your mouse over me for a few seconds
-            to see my dynamically bound title!
-        </span>
-
-            <hr/>
-
-            <p v-if="seen">Now you see me</p> <!--& v-show ocultar/mostrar elementos-->
-            <label> Mostrar <input name="mostrar" type="checkbox" v-model="seen"> </label>
-
-
-            <hr/>
-
-            <template v-if="name">
-                <!--template = forma de agrupar elementos para utilizar una directiva-->
-                <h1>
-                    {{ gender == 'm' ? 'Bienvenido' : 'Bienvenida' }}, {{ name }}
-                </h1>
-                <p>Espero que disfrutes tu visita</p>
-                <p>Tu nombre al revés es: {{ name.split('').reverse().join('') }}</p>
-            </template>
-            <p v-else>Por favor escribe tu nombre:</p>
-
-            <!--cambiar mensaje segun valor-->
-            <label> Hombre: <input name="gender" type="radio" v-model="gender" value="m"> </label>
-            <label> Mujer: <input name="gender" type="radio" v-model="gender" value="f"> </label>
-            <br>
-            <input name="paco" type="text" v-model="name" />
-
-
-            <p v-if="name == ''">
-                X este campo es obligatorio
-            </p>
-            <p v-if="name.length < 2">
-                X el nombre no es válido
-            </p>
-
-            <button v-on:click="changeColor('antiquewhite')" > <a href="#antiquewhite"> antiquewhite </a> </button>
-            <button v-on:click="changeColor('steelblue')" > <a href="#steelblue"> steelblue </a> </button>
-
-        </div>
-    </section>
-</div>
+        </nav>
+    </script>

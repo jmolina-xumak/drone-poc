@@ -3,10 +3,18 @@
 // Use Bliss.
 // Don't specify colors properties.
 
-.antiquewhite {
-    background: antiquewhite;
-}
+.menu{
+    &-mainList{
+        width: 200px;
+    }
+    &-item{
+        width: 100%;
+        float: left
+    }
+    &-SubList{
 
-.steelblue {
-    background: steelblue;
+    }
+ template{
+     display: none;
+ }
 }
