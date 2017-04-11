@@ -5,7 +5,7 @@
   &--1 {
     @include rem(font-size, 30px);
     color: $color-vogue-blue;
-    font-family: $font-hurme-geometric-sans; //provicional
+    font-family: $font-hurme-geometric-sans-bold; 
     line-height: 1.2;
 
     @media (min-width: $breakpoint-tablet) {
@@ -22,7 +22,7 @@
   &--2 {
     @include rem(font-size, 28px);
     color: $color-eastern-blue;
-    font-family: $font-hurme-geometric-sans; //provicional
+    font-family: $font-hurme-geometric-sans-bold; 
     line-height: 1.2;
 
     @media (min-width: $breakpoint-tablet) {
@@ -39,7 +39,7 @@
   &--3 {
     @include rem(font-size, 26px);
     color: $color-vogue-blue;
-    font-family: $font-hurme-geometric-sans; //provicional
+    font-family: $font-hurme-geometric-sans-bold;
     line-height: 1.2;
 
     @media (min-width: $breakpoint-tablet) {
@@ -56,7 +56,7 @@
   &--4 {
     @include rem(font-size, 22px);
     color: $color-vogue-blue;
-    font-family: $font-hurme-geometric-sans; //provicional
+    font-family: $font-hurme-geometric-sans-bold; 
     line-height: 1.18;
 
     @media (min-width: $breakpoint-tablet) {
@@ -73,7 +73,7 @@
   &--5 {
     @include rem(font-size, 16px);
     color: $color-vogue-blue;
-    font-family: $font-hurme-geometric-sans; //provicional
+    font-family: $font-hurme-geometric-sans-bold;
     line-height: 1.375;
 
     @media (min-width: $breakpoint-tablet) {
@@ -90,7 +90,7 @@
   &--6 {
     @include rem(font-size, 16px); 
     color: $color-vogue-blue;
-    font-family: $font-source-sans-pro; //provicional
+    font-family: $font-source-sans-pro-regular; 
     line-height: 1.375;
 
     @media (min-width: $breakpoint-tablet) {

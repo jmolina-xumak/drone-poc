@@ -4,11 +4,13 @@
 // Don't specify colors properties.
 
 @font-face {
-	font-family: "HurmeGeometricSans";
-	src: url("vendor/fonts/HurmeGeometricSans3.otf?") format("otf");
+	font-family: "HurmeGeometricSansBold";
+	src: url("vendor/fonts/HurmeGeometricSans3-bold.otf?") format("otf"),
+		 url("vendor/fonts/HurmeGeometricSans3-bold.ttf?") format("ttf");
 }
 
 @font-face {
-	font-family: "SourceSansPro";
-	src: url("vendor/fonts/SourceSansPro-lt.otf?") format("otf");
+	font-family: "SourceSansProRegular";
+	src: url("vendor/fonts/SourceSansPro-regular.otf?") format("otf"),
+		 url("vendor/fonts/SourceSansPro-regular.ttf?") format("ttf");
 }
