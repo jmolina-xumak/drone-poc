@@ -1,0 +1,52 @@
+<section>
+	<p>Types of Headings</p>
+			{% embed "heading" with '{
+			"text": "Heading h1",
+			"type": "1",
+			"class": ""
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h2",
+			"type": "2",
+			"class": ""
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h3",
+			"type": "3",
+			"class": ""
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h4",
+			"type": "4",
+			"class": ""
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h5",
+			"type": "5"
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h6",
+			"type": "6",
+			"class": ""
+			}' %}
+</section>
+
+<br><hr><br>
+
+<section>
+	<p> Buttons </p>
+		{%# each content.buttons %}
+			{% embed "button" with '{
+			"text": "text",
+			"hasIcon": "hasIcon",
+			"href": "href",
+			"disabled": "disabled",
+			"request": "request"
+			}' local_context=this %}
+		{%/ each %}
+</section>
