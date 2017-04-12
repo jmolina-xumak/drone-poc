@@ -1,0 +1,93 @@
+.MainInput {
+  position: relative;
+  &-label {
+    font-family: $font-source-sans-pro-regular;
+    @include rem(font-size, 16px);
+    text-align: left;    
+    height: 33px;
+    line-height: 33px;
+    position: absolute;
+    top: 16px;
+    width: 100%;
+    padding-left: 15px;
+    color: $color-iron;
+    transition: all  0.3s linear ;
+    background: $color-white;
+  }
+
+  &-input{
+    font-family: $font-source-sans-pro-regular;
+    @include rem(font-size, 16px);
+    text-align: left;
+    height: 33px;
+    line-height: 33px;    
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: $color-scorpio;
+    margin-top: 16px;
+    border: 0px;
+
+  }
+
+  &-input:focus{
+      outline: none;
+  }
+
+	&-underline{
+    margin: 0 15px;
+    height: 2px;
+    display: block;
+    background:$color-iron;
+    transition: all  0.5s linear ;
+  }
+    &--floating,
+    &--success,
+    &--warning,
+    &--error{
+      .MainInput {
+        &-label{
+          @include rem(font-size, 12px);
+          color:$color-eastern-blue;
+          top:0;
+          height: auto;
+          line-height: 1.6;
+        }
+        &-underline{
+          background:$color-eastern-blue;
+        }
+      }
+    }
+
+    &--success{
+      .MainInput {
+        &-label{        
+          color:$color-de-york;
+        }
+        &-underline{
+          background:$color-de-york;
+        }
+      }
+    }
+    &--warning{
+      .MainInput {
+        &-label{
+          color:$color-sunshade;
+        }
+        &-underline{
+          background:$color-sunshade;
+        }
+      }
+    }
+    &--error{
+      .MainInput {
+        &-label{
+          color:$color-scarlet;
+        }
+        &-underline{
+          background:$color-scarlet;
+        }
+      }
+    }
+
+}
