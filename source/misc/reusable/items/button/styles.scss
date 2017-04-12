@@ -1,7 +1,7 @@
 .Button {
     display: inline-block;
     position: relative;
-    height: 50px;
+    height: 48px;
     width: 100%;
     background: $color-torch-red;
     padding: 0 20px;
@@ -42,30 +42,21 @@
         fill: $color-white;
     }
     @media (min-width: $breakpoint-tablet) {
-        height: 46px;
         min-width: 100px;
         width: auto;
 
         &-text {
-            @include rem(font-size, 15px);
             margin-top: 11px;
         }
         &-icon {
             margin-top: 13px;
         }
     }
-    @media (min-width: $breakpoint-desktop) {
-        height: 44px;
-
-        &-text {
-            @include rem(font-size, 14px);
-        }
-    }
 }
 
 .Button--disabled {
     display: inline-block;
-    height: 50px;
+    height: 48px;
     width: 100%;
     background: $color-iron;
     padding: 0 20px;
@@ -81,26 +72,14 @@
        cursor: default;
     }
     @media (min-width: $breakpoint-tablet) {
-        height: 46px;
         min-width: 100px;
         width: auto;
-
-        &-text {
-            @include rem(font-size, 15px);
-        }
-    }
-    @media (min-width: $breakpoint-desktop) {
-        height: 44px;
-
-        &-text {
-            @include rem(font-size, 14px);
-        }
     }
 }
 
 .Button--request {
     display: inline-block;
-    height: 50px;
+    height: 48px;
     width: 100%;
     background: $color-broom;
     padding: 0 20px;
@@ -121,7 +100,6 @@
         fill: $color-vogue-blue;
     }
     @media (min-width: $breakpoint-tablet) {
-        height: 50px;
         min-width: 100px;
         width: auto;
 
