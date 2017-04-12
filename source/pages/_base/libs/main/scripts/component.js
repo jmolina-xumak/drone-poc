@@ -23,10 +23,49 @@
         computed:{
           hasStatus : function (){
               return (this.input.length  > 0 || this.focused) ? this.status : '' ;
-          }  
+          }
         },
         template:'#xmk-input'
     } );
+
+    Vue.component('xmk-select', {
+    	props: ['value', 'id', 'data', 'label', 'placeholder'],
+      data: function () {
+        return {
+          selected: null,
+          isOpen: false,
+          isHidding: false,
+          options: []
+        }
+      },
+      created: function(){
+      	this.options = this.data;
+      },
+      methods: {
+      	hidden: function(){
+        	this.isOpen = false;
+        },
+      	toggle: function() {
+          if ( !this.disabled ) {
+            this.isOpen = !this.isOpen;
+          }
+        },
+        update: function( item ) {
+    	    this.selected = item;
+        	this.options = this.options.map(function(it){
+          	it.selected = false;
+            return it;
+          });
+          this.$emit('input', this.selected.value);
+        }
+      },
+      computed: {
+        hasStatus : function (){
+            return (this.selected || this.isOpen) ;
+        }
+      },
+      template: '#xmk-select'
+    });
 
     new Vue({}).$mount('#xmkApp');
 })();

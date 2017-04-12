@@ -63,9 +63,20 @@
 </section>
 
 <section>
-	<p> Mega dinamic cool inputs </p> 
+	<p> Mega dinamic cool inputs </p>
 	{% embed "inputs" with '{"label": "input","modicateClass": "MainInput--floating","name":"input"}' %}
 	{% embed "inputs" with '{"label": "input1","modicateClass": "MainInput--success","name":"input1"}' %}
 	{% embed "inputs" with '{"label": "input2","modicateClass": "MainInput--warning","name":"input2"}' %}
 	{% embed "inputs" with '{"label": "input3","modicateClass": "MainInput--error","name":"input3"}' %}
+</section>
+
+<section>
+	<p>Select</p>
+	{% embed "select" with '{
+		"label": "Label...",
+		"placeholder": "Placeholder...",
+		"model":"myselectmodel",
+		"data": "select",
+		"id":"p9ow7gdu"
+	}' local_context=content %}
 </section>
