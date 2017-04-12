@@ -1,12 +1,11 @@
 {
   "parent": "_base",
-  "title": "Atoms Page",
-  "description": "A page to display system atoms",
+  "title": "Scenarios",
+  "description": "Page intended to include different scenarios",
   "tags": [
-    "xumak.com",
-    "febe"
+    "scenarios (new tag)"
   ],
-  "address": "xumak:Xumak2017:foundation:page:atoms-page",
+  "address": "XK:Xumak2017:foundation:page:scenarios",
   "excludes": [
     "data/config.json",
     "data/pages.json",
@@ -22,7 +21,7 @@
     "libs/styles/trumps.scss",
     "markup/content.html"
   ],
-  "containerClasses": "AtomsPage",
+  "containerClasses": "Scenarios",
   "extends": "bedrock:core:common:page:base;1.0.0",
   "dependencies": {
     "build": [],

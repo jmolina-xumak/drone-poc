@@ -1,11 +1,11 @@
-.Headings {
+.Heading {
   margin: 0;
   padding: 0;
 
   &--1 {
     @include rem(font-size, 30px);
     color: $color-vogue-blue;
-    font-family: $font-hurme-geometric-sans-bold; 
+    font-family: $font-hurme-geometric-sans-bold;
     line-height: 1.2;
 
     @media (min-width: $breakpoint-tablet) {
@@ -16,13 +16,13 @@
     @media (min-width: $breakpoint-desktop) {
       @include rem(font-size, 70px);
       line-height: 1.1;
-    }  
+    }
   }
 
   &--2 {
     @include rem(font-size, 28px);
     color: $color-eastern-blue;
-    font-family: $font-hurme-geometric-sans-bold; 
+    font-family: $font-hurme-geometric-sans-bold;
     line-height: 1.2;
 
     @media (min-width: $breakpoint-tablet) {
@@ -33,7 +33,7 @@
     @media (min-width: $breakpoint-desktop) {
       @include rem(font-size, 60px);
       line-height: 1.1;
-    }  
+    }
   }
 
   &--3 {
@@ -50,13 +50,13 @@
     @media (min-width: $breakpoint-desktop) {
       @include rem(font-size, 48px);
       line-height: 1.125;
-    }  
+    }
   }
 
   &--4 {
     @include rem(font-size, 22px);
     color: $color-vogue-blue;
-    font-family: $font-hurme-geometric-sans-bold; 
+    font-family: $font-hurme-geometric-sans-bold;
     line-height: 1.18;
 
     @media (min-width: $breakpoint-tablet) {
@@ -67,7 +67,7 @@
     @media (min-width: $breakpoint-desktop) {
       @include rem(font-size, 30px);
       line-height: 1.2;
-    }  
+    }
   }
 
   &--5 {
@@ -84,13 +84,13 @@
     @media (min-width: $breakpoint-desktop) {
       @include rem(font-size, 24px);
       line-height: 1.16;
-    }  
+    }
   }
 
   &--6 {
     @include rem(font-size, 16px); 
     color: $color-vogue-blue;
-    font-family: $font-source-sans-pro-regular; 
+    font-family: $font-source-sans-pro-regular;
     line-height: 1.375;
 
     @media (min-width: $breakpoint-tablet) {
@@ -101,7 +101,6 @@
     @media (min-width: $breakpoint-desktop) {
       @include rem(font-size, 20px);
       line-height: 1.3;
-    }  
+    }
   }
-  
 }

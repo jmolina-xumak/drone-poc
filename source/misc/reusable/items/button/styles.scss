@@ -1,14 +1,22 @@
 .Button {
-    display: block;
+    display: inline-block;
     position: relative;
     height: 50px;
-    width: auto;
+    width: 100%;
     background: $color-torch-red;
     padding: 0 20px;
     text-align: center;
     text-decoration: none;
+    
     &:hover {
-       background: $color-shiraz; 
+      background: $color-shiraz;
+    }
+
+    &:hover,
+    &:focus {
+      outline-color: $color-eastern-blue;
+      outline-style: solid;
+      outline-width: 2px;
     }
     
     &-text {
@@ -18,7 +26,7 @@
         font-weight: bold;
         @include rem(font-size, 16px);
         text-decoration: none;
-        transform: translateY(50%);
+        margin-top: 13px;
         
     }
     &-icon {
@@ -26,18 +34,24 @@
         transform: rotateY(180deg);
         width: 16px; 
         height: 16px;
-        position: absolute;
-        top: 31%;
         margin-left: 17px;
+        margin-top: 17px;
+        float: right;
     }
     path {
         fill: $color-white;
     }
     @media (min-width: $breakpoint-tablet) {
         height: 46px;
+        min-width: 100px;
+        width: auto;
 
         &-text {
             @include rem(font-size, 15px);
+            margin-top: 11px;
+        }
+        &-icon {
+            margin-top: 13px;
         }
     }
     @media (min-width: $breakpoint-desktop) {
@@ -50,9 +64,9 @@
 }
 
 .Button--disabled {
-    display: block;
+    display: inline-block;
     height: 50px;
-    width: auto;
+    width: 100%;
     background: $color-iron;
     padding: 0 20px;
     text-align: center;
@@ -68,6 +82,8 @@
     }
     @media (min-width: $breakpoint-tablet) {
         height: 46px;
+        min-width: 100px;
+        width: auto;
 
         &-text {
             @include rem(font-size, 15px);
@@ -83,9 +99,9 @@
 }
 
 .Button--request {
-    display: block;
+    display: inline-block;
     height: 50px;
-    width: auto;
+    width: 100%;
     background: $color-broom;
     padding: 0 20px;
     text-align: center;
@@ -106,6 +122,8 @@
     }
     @media (min-width: $breakpoint-tablet) {
         height: 50px;
+        min-width: 100px;
+        width: auto;
 
         &-text {
             @include rem(font-size, 16px);
