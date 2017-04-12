@@ -41,6 +41,12 @@
     background:$color-iron;
     transition: all  0.5s linear ;
   }
+
+  &-description {
+    @include rem(font-size, 11px);
+    padding-left: 15px;
+    display: none;
+  }
     &--floating,
     &--success,
     &--warning,
@@ -67,6 +73,10 @@
         &-underline{
           background:$color-de-york;
         }
+        &-description {
+          color:$color-de-york;
+          display: block;
+         }
       }
     }
     &--warning{
@@ -77,6 +87,10 @@
         &-underline{
           background:$color-sunshade;
         }
+        &-description {
+          color:$color-sunshade;
+          display: block;
+         }
       }
     }
     &--error{
@@ -87,6 +101,10 @@
         &-underline{
           background:$color-scarlet;
         }
+        &-description {
+          color:$color-scarlet;
+          display: block;
+         }
       }
     }
 

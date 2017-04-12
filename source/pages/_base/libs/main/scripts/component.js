@@ -4,7 +4,8 @@
         props: [
             'name',
             'label',
-            'status'
+            'status',
+            'description'
         ],
         data: function () {
             return {
