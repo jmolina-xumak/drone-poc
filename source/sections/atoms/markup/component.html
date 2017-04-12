@@ -1,0 +1,104 @@
+<section>
+	<p>Types of Headings</p>
+			{% embed "heading" with '{
+			"text": "Heading h1",
+			"type": "1",
+			"class": ""
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h2",
+			"type": "2",
+			"class": ""
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h3",
+			"type": "3",
+			"class": ""
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h4",
+			"type": "4",
+			"class": ""
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h5",
+			"type": "5"
+			}' %}
+
+			{% embed "heading" with '{
+			"text": "Heading h6",
+			"type": "6",
+			"class": ""
+			}' %}
+</section>
+
+<br><hr><br>
+
+<section>
+	<p> Buttons </p>
+		{%# each content.buttons %}
+			{% embed "button" with '{
+			"text": "text",
+			"hasIcon": "hasIcon",
+			"href": "href",
+			"disabled": "disabled",
+			"request": "request"
+			}' local_context=this %}
+		{%/ each %}
+</section>
+
+<br><hr><br>
+
+<section>
+	<p> Text Links </p>
+		{% embed "text-link" with '{
+			"text": "I am the text link",
+			"class": "",
+			"href": "#"
+		}' %}
+</section>
+<section>
+	<p> Mega dinamic cool inputs </p>
+		{% embed "inputs" with '{
+			"label": "input",
+			"modicateClass": "MainInput--floating",
+			"name": "input",
+			"descriptionText": ""
+		}' %}
+
+		{% embed "inputs" with '{
+			"label": "input1",
+			"modicateClass": "MainInput--success",
+			"name":"input1",
+			"descriptionText": "Input with Warning"
+		}' %}
+
+		{% embed "inputs" with '{
+			"label": "input2",
+			"modicateClass": "MainInput--warning",
+			"name": "input2",
+			"descriptionText": "Input with success"
+		}' %}
+
+		{% embed "inputs" with '{
+			"label": "input3",
+			"modicateClass": "MainInput--error",
+			"name": "input3",
+			"descriptionText": "Input with error"
+			} '%}
+</section>
+
+<section>
+	<p>Select</p>
+	{% embed "select" with '{
+		"label": "Label...",
+		"placeholder": "Placeholder...",
+		"model":"myselectmodel",
+		"data": "select",
+		"id":"p9ow7gdu"
+	}' local_context=content %}
+</section>
