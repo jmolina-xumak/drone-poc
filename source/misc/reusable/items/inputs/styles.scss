@@ -1,0 +1,44 @@
+.MainInput {
+
+  &-label {
+    font-family: $font-source-sans-pro-regular;
+    @include rem(font-size, 16px);
+    text-align: left;    
+    height: 33px;
+    line-height: 33px;
+    position: absolute;
+    top: 16px;
+    width: 100%;
+    padding-left: 15px;
+    color: $color-iron;
+  }
+
+  &-input{
+    font-family: $font-source-sans-pro-regular;
+    @include rem(font-size, 16px);
+    text-align: left;
+    height: 33px;
+    line-height: 33px;    
+    width: 100%;
+    padding-left: 15px;
+    color: $color-scorpio;
+
+    &--floating{
+      color:$color-eastern-blue;
+    }
+
+  }
+
+	&-underline{
+    width: 80%;
+    margin: 0 auto;
+    height: 2px;
+    display: block;
+    color:$color-iron;
+
+    &--floating{
+      color:$color-eastern-blue;
+    }
+  }
+
+}
