@@ -1,4 +1,4 @@
-$rem-baseline: 10px !default;
+$rem-baseline: 16px !default;
 
 @function rem-separator($list, $separator: false) {
   @if $separator == "comma" or $separator == "space" {

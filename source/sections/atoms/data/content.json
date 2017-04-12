@@ -1,5 +1,34 @@
 {
   "content": {
-    
+    "buttons": [
+        {
+          "href": "#",
+          "text": "Normal",
+          "hasIcon": true,
+          "disabled": false,
+          "request": false
+        },
+        {
+          "href": "#",
+          "text": "Disabled",
+          "hasIcon": true,
+          "disabled": true,
+          "request": false
+        },
+          {
+          "href": "#",
+          "text": "Request a Demo",
+          "hasIcon": false,
+          "disabled": false,
+          "request": true
+        },
+        {
+          "href": "",
+          "text": "Role button",
+          "hasIcon": false,
+          "disabled": false,
+          "request": false
+        }
+    ]
   }
 }
