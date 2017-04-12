@@ -1,11 +1,11 @@
 <script type="text/x-template" id="xmk-input" >
   <div class="MainInput " v-bind:class="hasStatus">
-    <label class="MainInput-label" v-bind:for="name"> {{label}} </label>
-    <input v-bind:id="name" class="MainInput-input"  v-on:focus="focusIn" v-on:blur="focusOut" type="text" v-model="input">
+    <label class="MainInput-label" v-bind:for="name">{{label}}</label>
+    <input v-bind:id="name" class="MainInput-input"  v-on:focus="focusIn" v-on:blur="focusOut" type="text" v-model="input" v-bind:placeholder="placeholder">
     <div class="MainInput-underlineContent">
       <span class="MainInput-underline" >  </span>
     </div>
-    <span class="MainInput-description"> {{ description }} </span>
+    <span class="MainInput-description">{{ validatorMessage }}</span>
   </div>
 </script>
 

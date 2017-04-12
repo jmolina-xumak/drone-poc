@@ -5,7 +5,8 @@
             'name',
             'label',
             'status',
-            'description'
+            'validatorMessage',
+            'placeholder'
         ],
         data: function () {
             return {
@@ -23,7 +24,7 @@
         },
         computed:{
           hasStatus : function (){
-              return (this.input.length  > 0 || this.focused) ? this.status : '' ;
+              return (this.input.length  > 0 || this.focused) ? 'MainInput--focused ' + this.status : '' ;
           }
         },
         template:'#xmk-input'
