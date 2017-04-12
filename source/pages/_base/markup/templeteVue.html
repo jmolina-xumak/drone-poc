@@ -1,0 +1,9 @@
+<script type="text/x-template" id="xmk-input" >
+  <div class="MainInput " v-bind:class="hasStatus">
+    <label class="MainInput-label" v-bind:for="name"> {{label}} </label>
+    <input v-bind:id="name" class="MainInput-input"  v-on:focus="focusIn" v-on:blur="focusOut" type="text" v-model="input">
+    <div class="MainInput-underlineContent">
+      <span class="MainInput-underline" >  </span> 
+    </div> 
+  </div>
+</script>
