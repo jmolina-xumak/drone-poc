@@ -1,0 +1,8 @@
+.vagrant/
+.idea/
+.DS_Store/
+.trash/
+target/
+JahiaFiles/
+dockerHost/.vagrant/
+*.iml
