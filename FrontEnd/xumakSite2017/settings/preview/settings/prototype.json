@@ -1,0 +1,27 @@
+{
+  "parent": "_base",
+  "title": "Preview",
+  "description": "This prototype is only used for previewing section prototypes.",
+  "tags": [
+    "page",
+    "prototype",
+    "preview",
+    "bedrock",
+    "febe"
+  ],
+  "address": "xk:bedrock:common:page:preview",
+  "excludes": [
+    "markup/body.html",
+    "markup/content.html",
+    "data/config.json",
+    "data/pages.json"
+  ],
+  "containerClasses": "preview",
+  "extends": "xk:bedrock:common:page:base;1.0.0",
+  "dependencies": {
+    "build": [
+    ],
+    "runtime": [
+    ]
+  }
+}
