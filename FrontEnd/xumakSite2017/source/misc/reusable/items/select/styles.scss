@@ -1,0 +1,86 @@
+
+
+.Select {
+  position: relative;
+  &-label {
+    font-family: $font-source-sans-pro-regular;
+    @include rem(font-size, 16px);
+    text-align: left;
+    height: 33px;
+    line-height: 33px;
+    position: absolute;
+    top: 16px;
+    width: 100%;
+    padding-left: 15px;
+    color: $color-iron;
+    transition: all  0.3s linear;
+    background: $color-white;
+  }
+
+  &-label--focused{
+    @include rem(font-size, 12px);
+    color:$color-eastern-blue;
+    top:0;
+    height: auto;
+    line-height: 1.6;
+  }
+
+  &-button{
+    font-family: $font-source-sans-pro-regular;
+    @include rem(font-size, 16px);
+    text-align: left;
+    height: 33px;
+    line-height: 33px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: $color-scorpio;
+    margin-top: 16px;
+    border: 0px;
+    outline: none;
+  }
+
+  &-list {
+    background: $color-scorpio;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    z-index: 4;
+  }
+
+  &-listItem {
+    color:  $color-white;
+    font-size: 16px;
+    margin: 0;
+    padding: 4px 10px;
+    text-align: left;
+    &:hover {
+      background: lighten($color-scorpio, 5);
+      color: $color-torch-red;
+      cursor: pointer;
+    }
+  }
+
+  &-underlineContent{
+    outline: none;
+    position: relative;
+  }
+
+	&-underline{
+    margin: 0;
+    height: 2px;
+    display: block;
+    background:$color-iron;
+    transition: all  0.5s linear ;
+  }
+
+  &-underline--focused {
+    background:$color-eastern-blue;
+    outline: none;
+  }
+
+}
