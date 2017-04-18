@@ -1,0 +1,45 @@
+services:
+  - name: "jahia"
+    image: "registry.xumak.gt:5000/xumak/layerx:1.0.0-jahiacd7.2-maven3.3.9-jdk8"
+    create_args:
+      - "-h=localhost"
+    ports:
+      - "8080:8080"
+  - name: "aemas"
+    image: "registry.xumak.gt:5000/febe/tools"
+    cmd: "aemas --repo /project/BERepo/jahia  --port 9090"
+    ports:
+      - "9090:9090"
+  - name: "feas"
+    image: "registry.xumak.gt:5000/febe/tools"
+    cmd: "feas --repo /project/FERepo/fe  --port 9091 --parent-url http://febe.xumak.gt:8080"
+    ports:
+      - "9091:9091"
+  - name: "ferunner"
+    image: "registry.xumak.gt:5000/febe/tools"
+    cmd: "FERunner -k -e --use-polling"
+    create_args:
+      - "-w=/project/Prototypes/xumakcom2017"
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+
+containers:
+ #FEBE stuff
+  - name: "febe-build"
+    image: "registry.xumak.gt:5000/febe/tools"
+    create_args:
+      - "-w=/project"
+    volumes:
+      - "/JahiaFiles:/JahiaFiles"
+  #build mvn bundle against author
+  - name: "build"
+    image: "registry.xumak.gt:5000/xumak/maven:3.3.9-jdk8"
+    create_args:
+      - "-w=/project/Java"
+    links:
+      - "author:author"
+  #provision stuff
+  - name: "base"
+    image: "alpine"
+
