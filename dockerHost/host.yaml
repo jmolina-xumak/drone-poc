@@ -1,0 +1,19 @@
+cms: "jahia"
+framework: "layerx"
+box:
+  name: "febe-jahia"
+ports:
+  - guest: "8080"
+    host: "8080"
+  - guest: "9090"
+    host: "9090"
+  - guest: "9091"
+    host: "9091"
+  - guest: "3000"
+    host: "3000"
+  - guest: "3001"
+    host: "3001"
+virtualbox:
+  memory: "5120"
+provision:
+  mvn_repository: "~/.m2/repository"

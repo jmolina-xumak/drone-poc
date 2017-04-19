@@ -1,0 +1,67 @@
+# Don't touch unless you know what you're doing!
+# Use host.yaml to manage the local environment options for this project
+#
+# version=1.0.4
+#
+
+require 'yaml'
+vagrant_root = File.dirname(__FILE__)
+host_config = YAML.load_file(vagrant_root + '/host.yaml')
+host_sync_folder = "/vagrant" # /vagrant is the default directory to sync
+m2_repository_folder = "/.m2/repository"
+
+# Deprecated section
+if host_config["environment"] != nil
+  print "host.yaml\n"
+  print "environment: option is deprecated, use cms: \n"
+end
+
+Vagrant.configure("2") do |config|
+  # The docker host VM
+  if host_config["box"]["version"] != nil then config.vm.box_version = host_config["box"]["version"] end
+  config.vm.box = host_config["box"]["name"]
+  config.vm.define "dockerhost"
+
+  #ports
+  host_config["ports"].each do |pt|
+    config.vm.network "forwarded_port", guest: pt["guest"], host: pt["host"]
+  end
+
+  #sync local files to the docker host VM
+  if host_config["operating_system"] == "mac" && host_config["nfs_shared_folder"] == true
+    config.vm.synced_folder "../", host_sync_folder, type: "nfs", mount_options: ["nolock", "vers=3", "udp"], id: "mac-NFS-sync"
+    if host_config["provision"] != nil
+      if host_config["provision"]["mvn_repository"] != nil
+        config.vm.synced_folder host_config["provision"]["mvn_repository"], m2_repository_folder, type: "nfs", mount_options: ["nolock", "vers=3", "udp"], id: "mac-NFS-mvn-sync"
+      end
+    end
+  else
+    config.vm.synced_folder "../", host_sync_folder, id: "default-sync"
+    if host_config["provision"] != nil
+      if host_config["provision"]["mvn_repository"] != nil
+        config.vm.synced_folder host_config["provision"]["mvn_repository"], m2_repository_folder, id: "mvn-defaut-sync"
+      end
+    end
+  end
+
+  #provision
+  config.vm.provision "shell", inline: "mkdir -p /.m2"
+  config.vm.provision "shell", inline: "cp #{host_sync_folder}/Resources/settings.xml /.m2 2>/dev/null || :; sleep 10"
+  #provision if git
+  if host_config["enable_git"] == true
+    config.vm.provision "shell", inline: "mkdir -p /ssh /gitconfig"
+    config.vm.provision "file", source: host_config["provision"]["private_key_file"], destination: "/tmp/id_rsa"
+    config.vm.provision "file", source: host_config["provision"]["gitconfig_file"], destination: "/tmp/.gitconfig"
+    config.vm.provision "shell", inline: "mv /tmp/id_rsa /ssh/id_rsa; mv /tmp/.gitconfig /gitconfig/.gitconfig"
+  end
+  #provision if AEM
+  if host_config["cms"] == "aem"
+    config.vm.provision "shell", inline: "mkdir -p /aemconfig /CQFiles"
+    config.vm.provision "shell", inline: "cp #{host_sync_folder}/Resources/install/* /aemconfig 2>/dev/null || :"
+  end
+
+  #virtualbox config
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--memory", host_config["virtualbox"]["memory"]]
+  end
+end
