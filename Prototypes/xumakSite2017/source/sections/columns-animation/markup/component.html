@@ -1,0 +1,26 @@
+
+<div style="height: 1500px">
+
+    <xmk-columns :controller="smcontroller" :time="5000" >
+        <div id="ColumnsAnimation" style="{% content.background %}" >
+            <div class="ColumnsAnimation-content row" >
+                <div class="ColumnsAnimation-column  medium-4 columns">
+                    <div class="ColumnsAnimation-box one-box" >
+                        {% includes "parsys1" %}
+                    </div>
+                </div>
+                <div class="ColumnsAnimation-column medium-4 columns">
+                    <div  class="ColumnsAnimation-box two-box" >
+                        {% includes "parsys2" %}
+                    </div>
+                </div>
+                <div class="ColumnsAnimation-column medium-4 columns">
+                    <div  class="ColumnsAnimation-box three-box">
+                        {% includes "parsys2" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </xmk-columns>
+
+</div>

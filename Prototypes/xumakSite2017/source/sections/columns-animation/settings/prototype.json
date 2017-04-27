@@ -1,0 +1,28 @@
+{
+  "parent": "",
+  "title": "columns Animation",
+  "description": "POC for validation the animation at a component with 3 colums with animation updwon,",
+  "tags": [
+    "POC"
+  ],
+  "address": "CXOM:Xumak-2017:VUE:section:columns-animation",
+  "excludes": [
+    "data/content.json",
+    "libs/authoring/libs.json",
+    "libs/authoring/styles/placeholder.scss",
+    "libs/libs.json",
+    "libs/scripts/component.js",
+    "libs/styles/component.scss",
+    "libs/styles/components/component.scss",
+    "libs/styles/objects/structure.scss",
+    "libs/styles/settings/colors.scss",
+    "libs/styles/trumps.scss",
+    "markup/component.html"
+  ],
+  "containerClasses": "ColumnsAnimation",
+  "extends": "bedrock:core:common:section:base;1.0.0",
+  "dependencies": {
+    "build": [],
+    "runtime": []
+  }
+}
