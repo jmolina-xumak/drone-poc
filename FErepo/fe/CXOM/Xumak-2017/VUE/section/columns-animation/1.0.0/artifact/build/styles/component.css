@@ -1,0 +1,13 @@
+.ColumnsAnimation-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.ColumnsAnimation-column {
+  position: relative; }
+
+.ColumnsAnimation-box {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-top: 0px; }

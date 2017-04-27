@@ -1,0 +1,20 @@
+{
+  "parsys1": [
+    {
+      "prototype": "base-card",
+      "content": "content"
+    }
+  ],
+  "parsys2": [
+    {
+      "prototype": "base-card",
+      "content": "content"
+    }
+  ],
+  "parsys3": [
+    {
+      "prototype": "base-card",
+      "content": "content"
+    }
+  ]
+}
