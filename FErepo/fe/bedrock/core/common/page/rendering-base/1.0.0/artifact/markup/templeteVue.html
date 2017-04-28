@@ -24,3 +24,20 @@
     </button>
   </div>
 </script>
+
+<script type="text/x-template" id="hero">
+    <div class="Hero">
+        <!--<img class="Hero-img" src="img/img_background.jpg" alt="XumaK POC with Scrolling effects">-->
+        <!-- Problems identified if we use a img tag: we would not be able to force the image to occupy 100% of 
+            viewport.  This can only be accomplished using a div with a background image -->
+        <div class="Hero-background" :style="{background: background}"></div>
+        <div class="Hero-content">
+            <p class="Hero-title">
+                {{title}}
+            </p>
+            <div class="Hero-cta">
+                <a class="Cta Cta-primary" :href="linkUrl">See Solutions</a>
+            </div>
+        </div>
+    </div>
+</script>

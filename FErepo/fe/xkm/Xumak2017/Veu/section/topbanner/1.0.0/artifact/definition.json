@@ -1,0 +1,38 @@
+{
+  "title": "TopBanner",
+  "description": "blank",
+  "name": "topbanner",
+  "address": "xkm:Xumak2017:Veu:section:topbanner",
+  "version": "1.0.0",
+  "extends": "bedrock:core:common:section:base;1.0.0",
+  "containerClasses": [
+    "Topbanner"
+  ],
+  "tags": [
+    "Top Banner",
+    "banner"
+  ],
+  "aem": {
+    "clientLibraries": [
+      {
+        "id": "cq.wcm.edit",
+        "styles": [
+          "authoring/styles/placeholder.css"
+        ],
+        "priority": 50
+      },
+      {
+        "id": "main",
+        "scripts": [
+          "scripts/component.js"
+        ],
+        "styles": [
+          "styles/component.css"
+        ],
+        "assets": [],
+        "priority": 50
+      }
+    ]
+  },
+  "blueprint": {}
+}

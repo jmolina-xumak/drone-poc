@@ -1,0 +1,47 @@
+{
+  "content": {
+    "buttons": [
+        {
+          "href": "#",
+          "text": "Normal",
+          "hasIcon": true,
+          "isButton": false,
+          "disabled": false,
+          "request": false
+        },
+        {
+          "href": "#",
+          "text": "Disabled",
+          "hasIcon": true,
+          "isButton": false,
+          "disabled": true,
+          "request": false
+        },
+          {
+          "href": "#",
+          "text": "Request a Demo",
+          "hasIcon": false,
+          "isButton": false,
+          "disabled": false,
+          "request": true
+        },
+        {
+          "href": "",
+          "text": "Role button",
+          "hasIcon": false,
+          "isButton": true,
+          "disabled": false,
+          "request": false
+        }
+    ],
+    "select": [
+      {
+        "text":"Item 1",
+        "value": 1
+      },{
+        "text": "Item 2",
+        "value": 2
+      }
+    ]
+  }
+}

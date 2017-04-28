@@ -1,0 +1,41 @@
+{
+  "title": "Atoms",
+  "description": "Section to include different atoms",
+  "name": "atoms",
+  "address": "XK:Xumak2017:foundation:section:atoms",
+  "version": "1.0.0",
+  "extends": "bedrock:core:common:section:base;1.0.0",
+  "containerClasses": [
+    "Atoms"
+  ],
+  "tags": [
+    "atoms (new tag)"
+  ],
+  "aem": {
+    "clientLibraries": [
+      {
+        "id": "cq.wcm.edit",
+        "styles": [
+          "authoring/styles/placeholder.css"
+        ],
+        "priority": 50
+      },
+      {
+        "id": "main",
+        "scripts": [
+          "scripts/component.js"
+        ],
+        "styles": [
+          "styles/component.css"
+        ],
+        "assets": [],
+        "priority": 50
+      }
+    ]
+  },
+  "blueprint": {
+    "embed": "◌",
+    "content.buttons": "[⦻..?]:◌",
+    "content.buttons[].embed": "◌"
+  }
+}
