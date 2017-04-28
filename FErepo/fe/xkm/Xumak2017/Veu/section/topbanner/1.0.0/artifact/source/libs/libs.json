@@ -6,5 +6,7 @@
   "styles": [
     "styles/component.scss"
   ],
-  "assets": []
+  "assets": [
+    "img"
+    ]
 }

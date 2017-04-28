@@ -32,7 +32,7 @@ Vue.component('xumak-text', {
             }
         }, {
             css: {
-                left: 0
+                left: '-5vw'
             }
         });
     }

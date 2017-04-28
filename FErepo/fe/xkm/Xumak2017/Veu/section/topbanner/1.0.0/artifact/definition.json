@@ -29,7 +29,9 @@
         "styles": [
           "styles/component.css"
         ],
-        "assets": [],
+        "assets": [
+          "img"
+        ],
         "priority": 50
       }
     ]

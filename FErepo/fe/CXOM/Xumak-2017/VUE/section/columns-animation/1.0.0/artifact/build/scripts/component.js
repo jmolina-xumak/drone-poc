@@ -23,17 +23,15 @@ Vue.component('xmk-columns', {
             threeColumn = $(".three-box"),
             ColumnsAnimation = $(".ColumnsAnimation-title");
 
-        tl.from(ColumnsAnimation, 1, { top: 150 }, "0");
-        tl.from(oneColumn, 1, { top: 150 }, "-=0.4");
-        tl.from(twoColumn, 1, { top: 150 }, "-=0.7");
-        tl.from(threeColumn, 1, { top: 150 }, "-=0.7");
+        tl.from(ColumnsAnimation, 1, { top: 250 }, "0");
+        tl.from(oneColumn, 1, { top: 250 }, "-=0.4");
+        tl.from(twoColumn, 1, { top: 250 }, "-=0.7");
+        tl.from(threeColumn, 1, { top: 250 }, "-=0.7");
         tl.play();
 
         new ScrollMagic.Scene({
-            duration: '40%'
-        }).setTween(tl).triggerHook(0.7).triggerElement('#ColumnsAnimation')
-        // .addIndicators({name: " ColumnsAnimation "})
-        .addTo(this.controller);
+            duration: '30%'
+        }).setTween(tl).triggerHook(0.45).triggerElement('#ColumnsAnimation').addIndicators({ name: " ColumnsAnimation " }).addTo(this.controller);
     },
     template: '<div><slot></slot></div>'
 });
