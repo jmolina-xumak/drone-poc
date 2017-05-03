@@ -26,9 +26,9 @@
         Vue.component('xumak-text', {
             template: '<div><slot></slot></div>',
             mounted: function() {
-
-                var tlXumakText = new TimelineMax(),
-                var tlXumakText2 = new TimelineMax(),
+                /*
+                var tlXumakText = new TimelineMax();
+                var tlXumakText2 = new TimelineMax();
                 XumakText = $("#XumakText");
                 tlXumakText.to(XumakText, 1, { left :'-10px'});
                 tlXumakText.play();
@@ -40,7 +40,7 @@
                 .triggerHook(0)
                 .triggerElement('#ColumnsAnimation')
                 .addIndicators({name: " ColumnsAnimation "})
-                .addTo(this.controller);
+                .addTo(this.controller);*/
             }
         }); 
               
