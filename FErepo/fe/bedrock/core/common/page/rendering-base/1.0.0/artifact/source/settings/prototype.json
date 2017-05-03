@@ -9,27 +9,10 @@
     "core"
   ],
   "excludes": [
-    "data/config.json",
-    "data/global.json",
-    "markup/body.html",
-    "markup/bottom.html",
-    "markup/content.html",
-    "markup/footer.html",
-    "markup/bottom.html",
-    "markup/extrascripts.html",
-    "markup/extrastyles.html",
-    "markup/head.html",
-    "markup/header.html",
-    "markup/layout.html",
-    "markup/metas.html",
-    "markup/scripts.html",
-    "markup/styles.html",
-    "settings/prototype.json"
+    "markup/bottom.html"
   ],
   "dependencies": {
-    "build": [
-    ],
-    "runtime": [
-    ]
+    "build": [],
+    "runtime": []
   }
 }
