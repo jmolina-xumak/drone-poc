@@ -30,8 +30,8 @@ Vue.component('xmk-columns', {
         tl.play();
 
         new ScrollMagic.Scene({
-            duration: '30%'
-        }).setTween(tl).triggerHook(0.45).triggerElement('#ColumnsAnimation').addIndicators({ name: " ColumnsAnimation " }).addTo(this.controller);
+            duration: '20%'
+        }).setTween(tl).triggerHook(0.55).triggerElement('#ColumnsAnimation').addIndicators({ name: " ColumnsAnimation " }).addTo(this.controller);
     },
     template: '<div><slot></slot></div>'
 });

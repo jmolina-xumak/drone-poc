@@ -34,15 +34,15 @@
                 tl.play();
       
 
-
                 new ScrollMagic.Scene({
-                    duration: '30%'
+                    duration: '20%'
                 })
                 .setTween(tl)
-                .triggerHook(0.45)
+                .triggerHook(0.55)
                 .triggerElement('#ColumnsAnimation')
                 .addIndicators({name: " ColumnsAnimation "})
                 .addTo(this.controller);
+                
         },
         template: '<div><slot></slot></div>'
     } );
