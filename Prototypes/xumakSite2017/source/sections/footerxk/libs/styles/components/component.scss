@@ -1,0 +1,39 @@
+
+// Define the component colors and themes here
+// Use Bliss.
+
+//TODO: CAmbiar colores y font por su variable equivalente, implementar el mixin de REMS
+.Footerxk {
+
+    &-mainList,
+    &-secondaryList {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &-mainLink {
+        text-decoration: none;
+        color: #023047; 
+        font-weight: bold;
+        font-family: "HurmeGeometricSansBold", Arial;
+        font-size: 16px; 
+        line-height: 44px;
+    }
+
+    &-copyText,
+    &-secondaryLink {
+        font-family: "SourceSansProRegular", Arial;
+        font-size: 14px;
+        line-height: 24px;
+        color: #939393;
+    }
+
+    &-secondaryItem {
+        display: inline-block;
+        margin-right: 30px;
+    }
+    &-secondaryLink {
+        text-decoration: underline;
+    }
+}
