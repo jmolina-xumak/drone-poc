@@ -1,3 +1,49 @@
 {
-  "content": {}
+  "content": {
+    "mainList": [
+        {
+          "link": "www.google.com",
+          "title": "Partners",
+          "target": "_self"
+        },
+        {
+          "link": "#",
+          "title": "Media",
+          "target": "_blank"
+        },
+        {
+          "link": "#",
+          "title": "Support",
+          "target": "_blank"
+        },
+        {
+          "link": "#",
+          "title": "Resources",
+          "target": "_self"
+        },
+        {
+          "link": "#",
+          "title": "Contact us",
+          "target": "_blank"
+        }
+    ],
+    "secondaryList": [
+        {
+          "link": "#",
+          "title": "Site map",
+          "target": "_self"
+        },
+                {
+          "link": "#",
+          "title": "Terms of use",
+          "target": "_self"
+        },
+                {
+          "link": "#",
+          "title": "Privacy policy",
+          "target": "_self"
+        }
+    ],
+    "copyrightText": "2016 XumaK LLC. All rights reserved"
+  }
 }

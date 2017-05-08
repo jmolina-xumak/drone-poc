@@ -4,12 +4,17 @@
 
 //TODO: CAmbiar colores y font por su variable equivalente, implementar el mixin de REMS
 .Footerxk {
+    padding-bottom: 80px;
 
     &-mainList,
     &-secondaryList {
         list-style: none;
         margin: 0;
         padding: 0;
+    }
+
+    &-mainItem {
+        display: block;
     }
 
     &-mainLink {
@@ -20,13 +25,18 @@
         font-size: 16px; 
         line-height: 44px;
     }
-
+    
     &-copyText,
     &-secondaryLink {
         font-family: "SourceSansProRegular", Arial;
         font-size: 14px;
         line-height: 24px;
         color: #939393;
+    }
+
+    &-copyText {
+        margin-top: 14px;
+        display: block;
     }
 
     &-secondaryItem {
@@ -36,4 +46,59 @@
     &-secondaryLink {
         text-decoration: underline;
     }
+
+    @media screen and (min-width: 40em) {
+        padding-bottom: 55px;
+        
+        &-mainList {
+            margin-bottom: 26px;
+        }
+        &-mainItem {
+            display: inline-block;
+            margin-right: 43px;
+        }
+        &-copyText {
+            margin-top: 0;
+        }
+        &-secondaryItem {
+            margin-right: 11px;
+        }
+    }
+
+    @media screen and (min-width: 64em){
+        &-mainItem {
+            margin-right: 28px;
+        }
+        &-copyText {
+           text-align: center;
+           margin-top: 10px;
+           margin-right: -7px;
+        }
+        &-copyText,
+        &-secondaryLink {
+            font-size: 13px;
+        }
+
+        &-secondaryList {
+            text-align: right;
+            margin-top: 8px;
+        }
+        &-secondaryItem {
+            margin-right: 10px;
+        }
+    } 
 }
+
+//Hack to solve foundation columns paddings
+.no-gutter {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.no-gutter-large {
+    @media screen and (min-width: 64em){
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    } 
+}
+
