@@ -3,5 +3,5 @@
     <span>{% content.heading %}</span>
     <h2>{% content.title %}</h2>
     <p>{% content.description %}</p>
-    <a href="{% content.mainCallToActionURL %}" {%# if content.mainCallToActionTarget %}target="_blank" {%/ if %}>{% content.mainCallToActionText %}</a>
+    <a href="{% content.mainCallToActionURL %}" {%# if content.mainCallToActionTarget %}target="{% content.mainCallToActionTarget %}" {%/ if %}>{% content.mainCallToActionText %}</a>
 </div>
