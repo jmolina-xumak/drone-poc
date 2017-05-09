@@ -15,37 +15,36 @@
                  jcr:primaryType="jnt:folder">
                         <main jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
                      jcr:primaryType="jnt:folder">
-                            <resources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                            <resources jcr:mixinTypes="jmix:hasExternalProviderExtension"
                              jcr:primaryType="jnt:folder">
-                                <css jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                                <css jcr:mixinTypes="jmix:hasExternalProviderExtension"
                           jcr:primaryType="jnt:cssFolder">
-                                    <main.css jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:cssFile"/>
+                                    <main.css jcr:primaryType="jnt:cssFile"/>
                                 </css>
-                                <javascript jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                                <javascript jcr:mixinTypes="jmix:hasExternalProviderExtension"
                                  jcr:primaryType="jnt:javascriptFolder">
-                                    <main.js jcr:mixinTypes="jmix:sourceControl"
-                                 jcr:primaryType="jnt:javascriptFile"/>
+                                    <main.js jcr:primaryType="jnt:javascriptFile"/>
                                 </javascript>
-                                <jnt_template jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                                <jnt_template jcr:mixinTypes="jmix:hasExternalProviderExtension"
                                    jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                                    <html jcr:mixinTypes="jmix:hasExternalProviderExtension"
                               jcr:primaryType="jnt:templateTypeFolder">
-                                        <base jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                                        <base jcr:mixinTypes="jmix:hasExternalProviderExtension"
                                  jcr:primaryType="jnt:folder">
-                                            <body.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <bottom.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <content.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <extrascripts.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <extrastyles.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <footer.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <head.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <header.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <metas.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <scripts.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <styles.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <systeminit.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <templeteVue.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
-                                            <top.html jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:editableFile"/>
+                                            <body.html jcr:primaryType="jnt:editableFile"/>
+                                            <bottom.html jcr:primaryType="jnt:editableFile"/>
+                                            <content.html jcr:primaryType="jnt:editableFile"/>
+                                            <extrascripts.html jcr:primaryType="jnt:editableFile"/>
+                                            <extrastyles.html jcr:primaryType="jnt:editableFile"/>
+                                            <footer.html jcr:primaryType="jnt:editableFile"/>
+                                            <head.html jcr:primaryType="jnt:editableFile"/>
+                                            <header.html jcr:primaryType="jnt:editableFile"/>
+                                            <metas.html jcr:primaryType="jnt:editableFile"/>
+                                            <scripts.html jcr:primaryType="jnt:editableFile"/>
+                                            <styles.html jcr:primaryType="jnt:editableFile"/>
+                                            <systeminit.html jcr:primaryType="jnt:editableFile"/>
+                                            <templeteVue.html jcr:primaryType="jnt:editableFile"/>
+                                            <top.html jcr:primaryType="jnt:editableFile"/>
                                         </base>
                                     </html>
                                 </jnt_template>

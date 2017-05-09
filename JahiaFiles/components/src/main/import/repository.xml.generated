@@ -10,22 +10,21 @@
                 <sources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
                   jcr:primaryType="jnt:moduleVersionFolder"
                   j:staticMountPointProviderKey="module-components-1.0-SNAPSHOT">
-                    <src jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                    <src jcr:mixinTypes="jmix:hasExternalProviderExtension"
                  jcr:primaryType="jnt:folder">
-                        <main jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                        <main jcr:mixinTypes="jmix:hasExternalProviderExtension"
                      jcr:primaryType="jnt:folder">
-                            <resources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                            <resources jcr:mixinTypes="jmix:hasExternalProviderExtension"
                              jcr:primaryType="jnt:folder">
-                                <META-INF jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                                <META-INF jcr:mixinTypes="jmix:hasExternalProviderExtension"
                                jcr:primaryType="jnt:metaInfFolder">
-                                    <definitions.cnd jcr:mixinTypes="jmix:sourceControl"
-                                         jcr:primaryType="jnt:definitionFile"/>
+                                    <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
                                 </META-INF>
-                                <xk_imagetextpoc jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                                <xk_imagetextpoc jcr:mixinTypes="jmix:hasExternalProviderExtension"
                                       jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                                    <html jcr:mixinTypes="jmix:hasExternalProviderExtension"
                               jcr:primaryType="jnt:templateTypeFolder">
-                                        <imagetextpoc.lx jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:viewFile"/>
+                                        <imagetextpoc.lx jcr:primaryType="jnt:viewFile"/>
                                     </html>
                                 </xk_imagetextpoc>
                             </resources>
