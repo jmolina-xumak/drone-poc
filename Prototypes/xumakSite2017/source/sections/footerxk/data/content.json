@@ -2,7 +2,7 @@
   "content": {
     "mainList": [
         {
-          "link": "www.google.com",
+          "link": "http://xumak.com/customers/",
           "title": "Partners",
           "target": "_self"
         },
@@ -39,9 +39,9 @@
           "target": "_self"
         },
                 {
-          "link": "#",
+          "link": "http://xumak.com/privacy-policy/",
           "title": "Privacy policy",
-          "target": "_self"
+          "target": "_blank"
         }
     ],
     "copyrightText": "2016 XumaK LLC. All rights reserved"
