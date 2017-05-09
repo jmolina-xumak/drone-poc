@@ -1,0 +1,12 @@
+{
+  "content": {
+    "imageURL":"",
+		"imageAlt":"",
+		"heading":"",
+		"title":"",
+		"description":"",
+		"mainCallToActionText":"",
+		"mainCallToActionURL":"",
+		"mainCallToActionTarget":""
+    }
+}
