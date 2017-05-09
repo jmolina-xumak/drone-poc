@@ -1,0 +1,40 @@
+{
+  "title": "base-card",
+  "description": "card that it has title, imagen and description",
+  "name": "base-card",
+  "address": "xmk:Xumak2017:Veu:section:base-card",
+  "version": "1.0.0",
+  "extends": "bedrock:core:common:section:base;1.0.0",
+  "containerClasses": [
+    "BaseCard"
+  ],
+  "tags": [],
+  "aem": {
+    "clientLibraries": [
+      {
+        "id": "cq.wcm.edit",
+        "styles": [
+          "authoring/styles/placeholder.css"
+        ],
+        "priority": 50
+      },
+      {
+        "id": "main",
+        "scripts": [
+          "scripts/component.js"
+        ],
+        "styles": [
+          "styles/component.css"
+        ],
+        "assets": [
+          "img"
+        ],
+        "priority": 50
+      }
+    ]
+  },
+  "blueprint": {
+    "content.image": "◌",
+    "embed": "◌"
+  }
+}

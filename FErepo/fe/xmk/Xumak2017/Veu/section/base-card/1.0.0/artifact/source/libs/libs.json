@@ -1,0 +1,12 @@
+{
+  "id": "main",
+  "scripts": [
+    "scripts/component.js"
+  ],
+  "styles": [
+    "styles/component.scss"
+  ],
+  "assets": [
+    "img"
+  ]
+}

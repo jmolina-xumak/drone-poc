@@ -1,0 +1,18 @@
+{
+  "parent": "",
+  "title": "base-card",
+  "description": "card that it has title, imagen and description",
+  "tags": "",
+  "address": "xmk:Xumak2017:Veu:section:base-card",
+  "excludes": [
+    "libs/authoring/libs.json",
+    "libs/authoring/styles/placeholder.scss",
+    "libs/libs.json"
+  ],
+  "containerClasses": "BaseCard",
+  "extends": "bedrock:core:common:section:base;1.0.0",
+  "dependencies": {
+    "build": [],
+    "runtime": []
+  }
+}

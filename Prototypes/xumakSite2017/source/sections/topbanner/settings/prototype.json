@@ -1,0 +1,29 @@
+{
+  "parent": "",
+  "title": "TopBanner",
+  "description": "",
+  "tags": [
+    "Top Banner",
+    "banner"
+  ],
+  "address": "xkm:Xumak2017:Veu:section:topbanner",
+  "excludes": [
+    "data/content.json",
+    "libs/authoring/libs.json",
+    "libs/authoring/styles/placeholder.scss",
+    "libs/libs.json",
+    "libs/scripts/component.js",
+    "libs/styles/component.scss",
+    "libs/styles/components/component.scss",
+    "libs/styles/objects/structure.scss",
+    "libs/styles/settings/colors.scss",
+    "libs/styles/trumps.scss",
+    "markup/component.html"
+  ],
+  "containerClasses": "Topbanner",
+  "extends": "bedrock:core:common:section:base;1.0.0",
+  "dependencies": {
+    "build": [],
+    "runtime": []
+  }
+}

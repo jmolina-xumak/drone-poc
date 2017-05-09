@@ -1,0 +1,15 @@
+<div class="BaseCard">
+    <img  src="{% content.image %}" alt="">
+    <div>
+        {% embed "heading" with '{
+			"text": "{%content.title%}",
+			"type": "6",
+			"class": ""
+			}' %}
+        {% embed "text-link" with '{
+			"text": "{%content.description%}",
+			"class": "",
+			"href": "#"
+		}' %}
+    </div>
+</div>

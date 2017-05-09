@@ -1,0 +1,41 @@
+{
+  "title": "columns Animation",
+  "description": "POC for validation the animation at a component with 3 colums with animation updwon,",
+  "name": "columns-animation",
+  "address": "CXOM:Xumak-2017:VUE:section:columns-animation",
+  "version": "1.0.0",
+  "extends": "bedrock:core:common:section:base;1.0.0",
+  "containerClasses": [
+    "ColumnsAnimation"
+  ],
+  "tags": [
+    "POC"
+  ],
+  "aem": {
+    "clientLibraries": [
+      {
+        "id": "cq.wcm.edit",
+        "styles": [
+          "authoring/styles/placeholder.css"
+        ],
+        "priority": 50
+      },
+      {
+        "id": "main",
+        "scripts": [
+          "scripts/component.js"
+        ],
+        "styles": [
+          "styles/component.css"
+        ],
+        "assets": [],
+        "priority": 50
+      }
+    ]
+  },
+  "blueprint": {
+    "embed": "◌",
+    "content.background": "◌",
+    "includes": "◌"
+  }
+}

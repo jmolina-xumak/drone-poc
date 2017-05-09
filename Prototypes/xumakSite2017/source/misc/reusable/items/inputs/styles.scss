@@ -58,53 +58,65 @@
 .MainInput--success,
 .MainInput--warning,
 .MainInput--error{
-  &-label{
-    @include rem(font-size, 12px);
-    color:$color-eastern-blue;
-    top: 5px;
-    height: auto;
-    line-height: 1.6;
+  .MainInput{
+    &-label{
+      @include rem(font-size, 12px);
+      color:$color-eastern-blue;
+      top: 10px;
+      height: auto;
+      line-height: 1.6;
+    }
+    &-underline{
+      background:$color-eastern-blue;
+    }
   }
-  &-underline{
-    background:$color-eastern-blue;
-  }
+
 }
 
 .MainInput--success{
-  &-label{        
-    color:$color-de-york;
-  }
-  &-underline{
-    background:$color-de-york;
-  }
-  &-description {
-    color:$color-de-york;
-    display: block;
+  .MainInput{
+    &-label{        
+     color:$color-de-york;
     }
+    &-underline{
+      background:$color-de-york;
+    }
+    &-description {
+      color:$color-de-york;
+      display: block;
+      }
+
+  }
+
 }
 
 .MainInput--warning{
-  &-label{
-    color:$color-sunshade;
-  }
-  &-underline{
-    background:$color-sunshade;
-  }
-  &-description {
-    color:$color-sunshade;
-    display: block;
+  .MainInput{
+    &-label{
+     color:$color-sunshade;
     }
+    &-underline{
+      background:$color-sunshade;
+    }
+    &-description {
+      color:$color-sunshade;
+      display: block;
+      }
+  }
 }
 
 .MainInput--error{
-  &-label{
+  .MainInput{
+    &-label{
     color:$color-scarlet;
-  }
-  &-underline{
-    background:$color-scarlet;
-  }
-  &-description {
-    color:$color-scarlet;
-    display: block;
     }
+    &-underline{
+      background:$color-scarlet;
+    }
+    &-description {
+      color:$color-scarlet;
+      display: block;
+      }
+  }
+
 }
