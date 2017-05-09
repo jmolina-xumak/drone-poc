@@ -1,0 +1,79 @@
+{
+  "id": "28c6f6f0-ffaa-11e6-8592-051fdfd40099",
+  "title": "XumaK.com 2107 Vue PoC ",
+  "name": "vue-poc",
+  "label": "vue-poc",
+  "namespace": "xk",
+  "definitions": {
+    "components": {
+      "page": {
+        "base": {
+          "artifacts": {
+            "jahia": {
+              "with": {
+                "coordinates": "xk:vue-poc:components:page:base"
+              },
+              "uses": "bedrock:core:components:page:base;1.0.0"
+            },
+            "fe": {
+              "uses": "bedrock:core:common:page:rendering-base;1.0.0"
+            }
+          }
+        }
+      },
+      "section": {
+        "imagetextpoc": {
+          "artifacts": {
+            "jahia": {
+              "uses": "xk:vue-poc:components:section:imagetext;1.0.0",
+              "with": {
+                "jahia": {
+                  "componentGroup": "XumaK 2017 Vue PoC"
+                }
+              }
+            },
+            "fe": {
+              "uses": "xmk:Xumak2017:Veu:section:base-card;1.0.0"
+            }
+          }
+        },
+        "vuecontainerpoc": {
+          "artifacts": {
+            "jahia": {
+              "uses": "xk:vue-poc:components:section:vuecontainerpoc;1.0.0",
+              "with": {
+                "jahia": {
+                  "componentGroup": "XumaK 2017 Vue PoC"
+                }
+              }
+            },
+            "fe": {
+              "uses": "CXOM:Xumak-2017:VUE:section:columns-animation;1.0.0"
+            }
+          }
+        }
+      }
+    },
+    "config": {}
+  },
+  "settings": {
+    "artifactSources": {
+      "fe": {
+        "spec": false,
+        "host": "fe.artifacts.xumak.io:8081",
+        "repositories": []
+      },
+      "aem": {
+        "spec": false,
+        "host": "aem.artifacts.xumak.io:9091",
+        "repositories": []
+      }
+    },
+    "jahia-repo-url": "http://localhost:9092",
+    "fe-repo-url": "http://localhost:8081",
+    "specs-path": "../ProjectSpecs/Specs.json",
+    "output-directory":"../JahiaFiles",
+    "deploy-modules": true,
+    "useNVM": true
+  }
+}

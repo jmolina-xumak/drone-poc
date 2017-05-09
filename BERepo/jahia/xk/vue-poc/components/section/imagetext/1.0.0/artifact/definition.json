@@ -1,0 +1,42 @@
+{
+    "title": "Image Text",
+    "description": "Image with Title and Description",
+    "name": "imagetext",
+    "address": "xk:vue-poc:components:section:imagetext",
+    "version": "1.0.0",
+    "extends": "bedrock:core:components:section:base;1.0.0",
+    "tags": [
+        "imagetext",
+        "core",
+        "bedrock"
+    ],
+    "blueprint": {
+        "content.image": "∫(⊛)",
+        "content.title": "∫(⊛)",
+        "content.description": "∫(⊛)"
+    },
+    "jahia": {
+        "superType": "",
+        "config": {
+            "xk_componentCategory": ["image"]
+        },
+        "properties": {
+            "image": {
+              "title": "Image",
+              "type": "weakreference",
+              "selector": "picker",
+              "selector-options": [
+                "type='image'"
+              ]
+            },
+            "title": {
+                "title": "Title",
+                "type": "string"
+            },
+            "description": {
+                "title": "Description",
+                "type": "string"
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "title": "Vue Container PoC",
+    "description": "Vue Container PoC FeBe",
+    "name": "vuecontainerpoc",
+    "address": "xk:vue-poc:components:section:vuecontainerpoc",
+    "version": "1.0.0",
+    "extends": "bedrock:core:components:section:base;1.0.0",
+    "tags": [
+        "imagetext",
+        "core",
+        "bedrock"
+    ],
+    "blueprint": {
+        "content.background": "∫(⊛)"
+    },
+    "jahia": {
+        "superType": "",
+        "properties": {
+            "background": {
+                "title": "Background (Hex content / #4286f4, #879926, #571f60) ",
+                "type": "string"
+            }
+        }
+    }
+}
