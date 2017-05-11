@@ -1,12 +1,12 @@
 {
   "parent": "",
-  "title": "FooterXK",
+  "title": "Mainfooter",
   "description": "",
   "tags": [
     "xumakcom2017",
     "footer"
   ],
-  "address": "xumak:Xumak2017:vue:section:footerxk",
+  "address": "xumak:Xumak2017:vue:section:mainfooter",
   "excludes": [
     "libs/libs.json",
     "libs/scripts/component.js",
@@ -14,7 +14,7 @@
     "data/config.json",
     "libs/authoring/libs.json"
   ],
-  "containerClasses": "Footerxk",
+  "containerClasses": "Mainfooter",
   "extends": "bedrock:core:common:section:base;1.0.0",
   "dependencies": {
     "build": [],
