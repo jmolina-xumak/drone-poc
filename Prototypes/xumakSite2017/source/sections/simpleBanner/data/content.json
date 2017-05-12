@@ -1,0 +1,15 @@
+{
+  "content": {
+    "imageURL":"http://lorempixel.com/728/400/",
+		"imageAlt":"imageAlt",
+		"heading":"see how Breaville drives decisions with data",
+		"title":"Success Story",
+		"description":"",
+		"mainCallToActionText":"See full story",
+		"mainCallToActionURL":"#",
+		"mainCallToActionTarget":"_blank",
+		"secondaryCallToActionText":"See all success stories",
+		"secondaryCallToActionURL":"#",
+		"secondaryCallToActionTarget":"_blank"
+    }
+}
