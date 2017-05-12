@@ -1,15 +1,17 @@
 
 <div id="ColumnsAnimation" class="ColumnsAnimation row"  >
-    <div class="ColumnsAnimation-title">
+
+
+    <xmk-columns :controller="smcontroller"  >
+        
+        <div class="ColumnsAnimation-title">
         {% embed "heading" with '{
 			"text": "Fast. Premium, Experinced , The Xumak difference ",
 			"type": "1",
 			"class": ""
 			}' %}
-    </div>
+        </div>
 
-
-    <xmk-columns :controller="smcontroller"  >
         <div  style="{% content.background %}" >
             <div class="ColumnsAnimation-content " >
                 <div class="ColumnsAnimation-column  medium-4 columns">

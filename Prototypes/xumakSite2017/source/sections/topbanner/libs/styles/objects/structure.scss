@@ -64,6 +64,7 @@
 
 .XumakText {
     position: fixed;
+    white-space: nowrap;
     top: 0px;
     font-size: 1000px;
     margin: 0;
@@ -74,6 +75,7 @@
     -webkit-filter: contrast(4);
     filter: contrast(4);
     line-height: 0.8;
+    left: -30px;
 }
 
 .Services {
