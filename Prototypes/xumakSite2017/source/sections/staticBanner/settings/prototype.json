@@ -19,7 +19,6 @@
     "libs/styles/settings/colors.scss",
     "libs/styles/trumps.scss",
     "markup/component.html",
-    "settings/prototype.json",
     "data/config.json"
   ],
   "containerClasses": "StaticBanner",

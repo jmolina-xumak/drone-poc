@@ -6,10 +6,10 @@
 .StaticBanner {
     &-heading {
         font-family: $font-hurme-geometric-sans-bold;
-        color: $color-vogue-blue;
+        color: $color-heading;
     }
     &-description {
         font-family: $font-source-sans-pro-regular;
-        color: $color-mine-shaft;
+        color: $color-description;
     }
 }
