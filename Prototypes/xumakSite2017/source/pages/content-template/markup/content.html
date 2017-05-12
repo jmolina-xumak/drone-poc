@@ -1,19 +1,29 @@
 <div class="ContentTemplate">
-  <div class="row">
-    <div class="small-12 columns">
-      * Main navigation <br/>
-      * Page motion title <br/>
-      * Footer <br/>
-      * single full with parsys. <br/>
 
-    <!--Main navigation-->
+  <!-- Page motion title -->
+  <div class="ContentTemplate-PageMotionTitle">
+    {%! include "PageMotionTitle" %}
+  </div>
 
-    <div class="ContentTemplate-container">
-      {% include "TextAndImageWithLink" %} <!--Page motion title-->
-      <!--single full with parsys-->
+  <!-- MainNavigation -->
+  <div class="ContentTemplate-MainNavigation">
+    {%! include "MainNavigation" %}
+  </div>
+
+  <div class="ContentTemplate-Container">
+    <!-- Top Banner -->
+    <div class="ContentTemplate-TopBanner">
+      {%! include "TopBanner" %}
     </div>
 
-    <!--Footer-->
+    <!-- Single Full With Parsys -->
+    <div class="ContentTemplate-Components">
+      {{ Parsys }}
     </div>
+  </div>
+  
+  <!--Footer-->
+  <div class="ContentTemplate-Footer">
+    {%! include "Footer" %}
   </div>
 </div>
