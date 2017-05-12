@@ -1,15 +1,7 @@
-<script type="text/x-template" id="xmk-input" >
-  <div class="MainInput " v-bind:class="hasStatus">
-    <label class="MainInput-label" v-bind:for="name">{{label}}</label>
-    <input v-bind:id="name" class="MainInput-input"  v-on:focus="focusIn" v-on:blur="focusOut" type="text" v-model="input" v-bind:placeholder="placeholder">
-    <div class="MainInput-underlineContent">
-      <span class="MainInput-underline" >  </span>
-    </div>
-    <span class="MainInput-description">{{ validatorMessage }}</span>
-  </div>
-</script>
 
-<script type="text/x-template" id="xmk-select">
+{% embed "templates.input" with '{}' %}
+
+<script type="text/x-template" id="atom-select">
 	<div class="Select">
   	<label class="Select-label" v-bind:class="{ 'Select-label--focused': hasStatus }" v-bind:for="id">{{ label }}</label>
     <button class="Select-button" v-bind:id="id" v-on:click="toggle" v-on:blur="hidden">

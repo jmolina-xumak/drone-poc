@@ -1,6 +1,6 @@
 // TODO: code logic here
 
-    Vue.component( 'xmk-input', {
+    Vue.component( 'atom-input', {
         props: [
             'name',
             'label',
@@ -27,10 +27,10 @@
               return (this.input.length  > 0 || this.focused) ? 'MainInput--focused ' + this.status : '' ;
           }
         },
-        template:'#xmk-input'
+        template:'#atom-input'
     } );
 
-    Vue.component('xmk-select', {
+    Vue.component('atom-select', {
     	props: ['value', 'id', 'data', 'label', 'placeholder'],
       data: function () {
         return {
@@ -66,7 +66,7 @@
             return (this.selected || this.isOpen) ;
         }
       },
-      template: '#xmk-select'
+      template: '#atom-select'
     });
 
 
@@ -77,4 +77,3 @@
         };
     }
     }).$mount('#xmkApp');
-
