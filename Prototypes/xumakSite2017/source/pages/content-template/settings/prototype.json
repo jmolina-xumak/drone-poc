@@ -8,19 +8,15 @@
   ],
   "address": "xumak:Xumak2017:vue:page:content-template",
   "excludes": [
-    "data/config.json",
-    "data/pages.json",
     "libs/libs.json",
     "libs/scripts/component.js",
-    "libs/styles/component.scss",
-    "libs/styles/components/component.scss",
-    "libs/styles/objects/structure.scss",
     "libs/styles/page/elements.scss",
     "libs/styles/page/generic.scss",
     "libs/styles/page/settings.scss",
     "libs/styles/page/tools.scss",
     "libs/styles/trumps.scss",
-    "markup/content.html"
+    "data/config.json",
+    "data/pages.json"
   ],
   "containerClasses": "ContentTemplate",
   "extends": "bedrock:core:common:page:base;1.0.0",
