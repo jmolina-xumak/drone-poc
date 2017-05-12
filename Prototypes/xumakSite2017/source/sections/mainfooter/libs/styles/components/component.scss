@@ -2,7 +2,7 @@
 // Define the component colors and themes here
 // Use Bliss.
 .Mainfooter {
-    padding-bottom: 80px;
+    padding-bottom: 37px;
 
     &-mainList,
     &-secondaryList {
@@ -37,8 +37,12 @@
         display: block;
     }
 
+    &-secondaryList {
+        display: table;
+        width: 100%;
+    }
     &-secondaryItem {
-        display: inline-block;
+        display: table-cell;
         margin-right: 30px;
     }
     &-secondaryLink {
@@ -58,8 +62,13 @@
         &-copyText {
             margin-top: 0;
         }
+        &-secondaryList {
+            display: block;
+            width: 100%;
+        }
         &-secondaryItem {
             margin-right: 11px;
+            display: inline-block;
         }
     }
 
