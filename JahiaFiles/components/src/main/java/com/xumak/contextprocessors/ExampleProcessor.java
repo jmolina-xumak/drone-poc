@@ -24,7 +24,7 @@ import static com.xumak.Constants.EXAMPLE_TEXT_VALUE;
 
 
 /**
- * Basic example context processor definiton.
+ * Basic example context processor definition.
  * Change History
  * --------------------------------------------------------------------------------------
  * Version | Date       | Developer       | Changes
