@@ -1,11 +1,12 @@
-package com.junitpoc.base.templatingsupport;
+package com.xumak.base.templatingsupport;
 
-import com.junitpoc.base.configuration.MockLayerXConfiguration;
-import com.junitpoc.base.configuration.MockLayerXConfigurationProvider;
+import com.xumak.base.configuration.MockLayerXConfiguration;
+import com.xumak.base.configuration.MockLayerXConfigurationProvider;
 import layerx.api.ExecutionContext;
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.resource.ResourceResolver;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.jahia.services.render.Resource;
 import org.mockito.Mockito;
 
@@ -13,7 +14,11 @@ import javax.jcr.Node;
 import java.util.HashMap;
 import java.util.Map;
 
-import static layerx.Constants.*;
+import static layerx.Constants.TEMPLATE_CONTENT_MODEL_ATTR_NAME;
+import static layerx.Constants.DESIGN_PROPERTIES_KEY;
+import static layerx.Constants.GLOBAL_PROPERTIES_KEY;
+import static layerx.Constants.RESOURCE_CONTENT_KEY;
+import static layerx.Constants.CONFIG_PROPERTIES_KEY;
 import static layerx.jahia.Constants.JAHIA_RESOURCE;
 import static org.mockito.Mockito.when;
 
@@ -24,7 +29,6 @@ import static org.mockito.Mockito.when;
  *      - Request
  *      - Response
  *      - Resource
- *      - Resource Resolver
  *      - Content Model
  *          * Config
  *          * Content
@@ -47,10 +51,8 @@ public class BaseTest {
     public String resourceType = JAHIA_RESOURCE;
 
     public ExecutionContext executionContext;
-    public SlingHttpServletRequest request;
-    public SlingHttpServletResponse response;
-    public ResourceResolver resourceResolver;
-//    public Resource resource;
+    public HttpServletRequest request;
+    public HttpServletResponse response;
     public Resource resource;
     public Node node;
 
@@ -68,14 +70,14 @@ public class BaseTest {
     }
 
     public void initializeConfiguration() {
+
         // Init Objects
         executionContext = Mockito.mock(ExecutionContext.class);
-        request = Mockito.mock(SlingHttpServletRequest.class);
-        response = Mockito.mock(SlingHttpServletResponse.class);
+        request = Mockito.mock(HttpServletRequest.class);
+        response = Mockito.mock(HttpServletResponse.class);
         resource = Mockito.mock(Resource.class);
-  ///      resource = Mockito.mock(Resource.class);
         node = Mockito.mock(Node.class);
-        resourceResolver = Mockito.mock(ResourceResolver.class);
+
         contentModel = new MockTemplateContentModel(request, response);
         config = new HashMap<>();
         content = new HashMap<>();
@@ -83,23 +85,17 @@ public class BaseTest {
         design = new HashMap<>();
         page = new HashMap<>();
 
-
+        //resource
         when(executionContext.get(JAHIA_RESOURCE)).thenReturn(resource);
 
-        //Training
-//        when(request.getResource()).thenReturn(resource);
-        when(request.getResourceResolver()).thenReturn(resourceResolver);
- //       when(resource.getResourceResolver()).thenReturn(resourceResolver);
-  //      when(resource.getResourceType()).thenReturn(resourceType);
-        when(request.getAttribute(TEMPLATE_CONTENT_MODEL_ATTR_NAME))
-                .thenReturn(contentModel);
+        //contentModel
+        when(request.getAttribute(TEMPLATE_CONTENT_MODEL_ATTR_NAME)).thenReturn(contentModel);
 
         //Setting up the content model
         contentModel.set(DESIGN_PROPERTIES_KEY, design);
         contentModel.set(GLOBAL_PROPERTIES_KEY, global);
         contentModel.set(RESOURCE_CONTENT_KEY, content);
         contentModel.set(CONFIG_PROPERTIES_KEY, config);
-//        contentModel.set(GLOBAL_PAGE_CONTENT_KEY, page);  //TODO is it valid in Jahia?
     }
 
     public void setResourceType(final String resourceType) {

@@ -1,11 +1,9 @@
-package com.junitpoc.base.configuration;
+package com.xumak.base.configuration;
 
-import com.day.cq.wcm.api.components.ComponentManager;
 import layerx.api.configuration.Configuration;
 import layerx.api.configuration.Mode;
 import net.minidev.json.JSONObject;
 import net.minidev.json.JSONStyle;
-import org.apache.sling.commons.testing.sling.MockResourceResolver;
 
 import java.util.Collection;
 import java.util.Date;
@@ -26,11 +24,8 @@ import java.util.Set;
 public class MockLayerXConfiguration implements Configuration{
 
     private static final Mode DEFAULT_MODE = Mode.INHERIT;
-    private MockResourceResolver resourceResolver;
-    private ComponentManager componentManager;
 
     public MockLayerXConfiguration(final String resourceType) {
-
     }
 
     @Override

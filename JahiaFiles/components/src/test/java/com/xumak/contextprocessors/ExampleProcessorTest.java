@@ -1,8 +1,8 @@
-package com.junitpoc.logiclesstemplates.processors;
+package com.xumak.contextprocessors;
 
-import com.junitpoc.base.configuration.MockLayerXConfiguration;
-import com.junitpoc.base.configuration.MockLayerXConfigurationProvider;
-import com.junitpoc.base.templatingsupport.BaseTest;
+import com.xumak.base.configuration.MockLayerXConfiguration;
+import com.xumak.base.configuration.MockLayerXConfigurationProvider;
+import com.xumak.base.templatingsupport.BaseTest;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +14,10 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static layerx.Constants.CONTENT;
+import static layerx.Constants.DOT;
+import static com.xumak.Constants.EXAMPLE_KEY;
+import static com.xumak.Constants.EXAMPLE_TEXT_VALUE;
 
 /**
  * MockLayerXConfigurationProvider
@@ -28,7 +32,9 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(MockitoJUnitRunner.class)
 public class ExampleProcessorTest {
 
-    Logger log = LoggerFactory.getLogger(ExampleProcessorTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExampleProcessorTest.class);
+
+    private String contentExampleKey = CONTENT.concat(DOT).concat(EXAMPLE_KEY);
 
     @Mock
     public MockLayerXConfigurationProvider configurationProvider;
@@ -46,7 +52,7 @@ public class ExampleProcessorTest {
         baseTest = new BaseTest();
         baseTest.initializeConfiguration(configurationProvider, configuration);
 
-        // config propertieres
+        // config properties section
         /* section to add required configurations */
     }
 
@@ -54,18 +60,19 @@ public class ExampleProcessorTest {
     public void testExampleTextIsNotNull() throws Exception {
         exampleProcessor.process(baseTest.executionContext, baseTest.contentModel);
 
-        final Object exampleTextValue = baseTest.contentModel.get("content.exampleText");
+        final Object exampleTextValue = baseTest.contentModel.get(contentExampleKey);
         assertNotNull(exampleTextValue);
     }
 
     @Test
     public void testExampleTextEquals() throws Exception{
+
         exampleProcessor.process(baseTest.executionContext, baseTest.contentModel);
 
-        final String exampleTextValue = baseTest.contentModel.getAsString("content.exampleText");
+        final String exampleTextValue = baseTest.contentModel.getAsString(contentExampleKey);
 
-        log.info("******* exampleTextValue: " + exampleTextValue);
+        LOGGER.info("exampleTextValue : " + exampleTextValue);
 
-        assertEquals("This is a text from a processor :)", exampleTextValue);
+        assertEquals(EXAMPLE_TEXT_VALUE, exampleTextValue);
     }
 }

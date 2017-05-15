@@ -1,9 +1,9 @@
-package com.junitpoc.base.templatingsupport;
+package com.xumak.base.templatingsupport;
 
 
 import layerx.jahia.templating.TemplateContentModel;
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.SlingHttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * MockTemplateContentModel
@@ -20,7 +20,7 @@ import org.apache.sling.api.SlingHttpServletResponse;
 
 public class MockTemplateContentModel extends TemplateContentModel {
 
-    public MockTemplateContentModel(final SlingHttpServletRequest request, final SlingHttpServletResponse response) {
+    public MockTemplateContentModel(final HttpServletRequest request, final HttpServletResponse response) {
         super(request, response);
     }
 }

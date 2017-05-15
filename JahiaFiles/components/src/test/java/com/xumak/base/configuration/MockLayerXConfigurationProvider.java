@@ -1,4 +1,4 @@
-package com.junitpoc.base.configuration;
+package com.xumak.base.configuration;
 
 
 import layerx.api.configuration.Configuration;
