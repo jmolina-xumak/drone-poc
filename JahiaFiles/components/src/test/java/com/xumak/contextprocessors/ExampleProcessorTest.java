@@ -20,8 +20,8 @@ import static com.xumak.Constants.EXAMPLE_KEY;
 import static com.xumak.Constants.EXAMPLE_TEXT_VALUE;
 
 /**
- * MockLayerXConfigurationProvider
- * <description>
+ * ExampleProcessorTest
+ * To do unit test for the ExampleProcessor.
  * -­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-‐
  * Change History
  * --------------------------------------------------------------------------------------

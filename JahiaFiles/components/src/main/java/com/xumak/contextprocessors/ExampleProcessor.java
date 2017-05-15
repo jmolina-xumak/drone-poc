@@ -24,36 +24,13 @@ import static com.xumak.Constants.EXAMPLE_TEXT_VALUE;
 
 
 /**
- * This processor retrieve all the images path added by the author using the dialog of a component and stored it
- * in a Map Object.
- *
- * The key map returned is the same that the property name.
- * The value map returned is the image path selected by the user.
- *
- * Example map result.
- * componentMap= {
- *  Externalized accordingly: (default | live)
- *  image=/files/default/sites/marcosantil/files/triangulos_314x308.jpg,
- *  imagetwo=/files/default/sites/marcosantil/files/triangulos_759x308.jpg,
- *  imagethree=/files/default/sites/marcosantil/files/triangulos_750x314.jpg
- *  ...
- *  }
- *
- *  Example to display a specific image stored in the Map Object in a component.
- *  {% content.componentContext.image %}
- *
- *  The process to retrieve the image node path in the repository is to retrieve each id image node
- *  and with the jcr session it retrieve the node using the id node of each image and finally it used
- *  the node path of each node.
- *	-----------------------------------------------------------------------------
- * 	CHANGE	HISTORY
- *	-----------------------------------------------------------------------------
- *	Version	|	Date		|	Developer				|	Changes
- *	1.0		|	2016/10/31	|	Juan J. Pol				|	Initial	Creation
- *	-----------------------------------------------------------------------------
+ * Basic example context processor definiton.
+ * Change History
+ * --------------------------------------------------------------------------------------
+ * Version | Date       | Developer       | Changes
+ * 1.1     | 10/05/5017 | Rainman Sián    | Initial creation
+ * --------------------------------------------------------------------------------------
  * */
-
-
 
 @Component
 @Service
