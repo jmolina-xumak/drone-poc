@@ -51,6 +51,21 @@
               "uses": "CXOM:Xumak-2017:VUE:section:columns-animation;1.0.0"
             }
           }
+        },
+        "mainnavigation": {
+          "artifacts": {
+            "jahia": {
+              "uses": "xk:components:section:mainnav;1.0.0",
+              "with": {
+                "jahia": {
+                  "componentGroup": "XumaK Site"
+                }
+              }
+            },
+            "fe": {
+              "uses": "xmk:Xumak2017:Veu:section:base-card;1.0.0"
+            }
+          }
         }
       }
     },
@@ -71,7 +86,7 @@
     },
     "jahia-repo-url": "http://localhost:9092",
     "fe-repo-url": "http://localhost:8081",
-    "specs-path": "../ProjectSpecs/Specs.json",
+    "specs-path": "Specs.json",
     "output-directory":"../JahiaFiles",
     "deploy-modules": true,
     "useNVM": true

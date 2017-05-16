@@ -1,0 +1,33 @@
+{
+    "title": "Main navigation",
+    "description": "Shows the main navigation of the site",
+    "name": "mainnav",
+    "address": "xk:components:section:mainnav",
+    "version": "1.0.0",
+    "extends": "bedrock:core:components:section:base;1.0.0",
+    "tags": [
+        "mainnav",
+        "core",
+        "bedrock"
+    ],
+    "blueprint": {
+        "content.rootPath": "∫(⊛)",
+        "content.title": "∫(⊛)"
+    },
+    "jahia": {
+        "superType": "",
+        "config": {
+            "xk_componentCategory": ["mainNavigation"]
+        },
+        "properties": {
+            "title": {
+                "title": "Title",
+                "type": "string"
+            },
+            "rootPath": {
+                "type": "path",
+                "selector": "picker"
+            }
+        }
+    }
+}
