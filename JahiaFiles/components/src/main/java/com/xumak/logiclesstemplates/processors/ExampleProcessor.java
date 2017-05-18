@@ -1,4 +1,4 @@
-package com.xumak.contextprocessors;
+package com.xumak.logiclesstemplates.processors;
 
 import layerx.core.contextprocessors.AbstractCheckComponentCategoryContextProcessor;
 import layerx.jahia.templating.TemplateContentModel;
