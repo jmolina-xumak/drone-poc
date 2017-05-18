@@ -21,12 +21,12 @@
 
     }
     &-heading {
-        font-size: 14px;
+        @include rem(font-size, 14px);
         font-weight: bold;
         line-height: 20px;
     }
     &-description {
-        font-size: 16px;
+        @include rem(font-size, 16px);
         line-height: 24px;
     }
     &-linkBox {
@@ -57,6 +57,10 @@
         &-linkBox {
             text-align: left;
         }
+        &-heading {
+            @include rem(font-size, 20px);
+            line-height: 24px;
+        }
     }
     @media (min-width: $breakpoint-desktop) {
         width: 100%;
@@ -77,6 +81,10 @@
             margin-left: 20px;
             display: inline-block;
             width: auto;
+        }
+         &-heading {
+            @include rem(font-size, 24px);
+            line-height: 32px;
         }
     }
 }
