@@ -3,6 +3,7 @@ package com.xumak.contextprocessors;
 import com.xumak.base.configuration.MockLayerXConfiguration;
 import com.xumak.base.configuration.MockLayerXConfigurationProvider;
 import com.xumak.base.templatingsupport.BaseTest;
+import com.xumak.logiclesstemplates.processors.ExampleProcessor;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

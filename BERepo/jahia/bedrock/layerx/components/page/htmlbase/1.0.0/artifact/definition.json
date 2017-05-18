@@ -227,6 +227,14 @@
         "page"
       ],
       "xk_clientAccessible": false
+    },
+    "properties": {
+      "prop1": {
+        "title": "This Title"
+      },
+      "prop2": {
+        "title": "First Title"
+      }
     }
   },
   "implementation": {
