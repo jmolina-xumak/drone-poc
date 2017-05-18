@@ -14,13 +14,11 @@ import org.slf4j.Logger;
 
 import java.util.Map;
 import java.util.Set;
+import com.xumak.Constants;
 
 import static layerx.jahia.Constants.JAHIA_RESOURCE;
 import static layerx.Constants.LOW_PRIORITY;
 import static layerx.Constants.CONTENT;
-import static com.xumak.Constants.EXAMPLE_KEY;
-import static com.xumak.Constants.CATEGORY_NAME_EXAMPLE;
-import static com.xumak.Constants.EXAMPLE_TEXT_VALUE;
 
 
 /**
@@ -40,7 +38,7 @@ public class ExampleProcessor extends AbstractCheckComponentCategoryContextProce
 
     @Override
     public Set<String> anyOf() {
-        return Sets.newHashSet(CATEGORY_NAME_EXAMPLE);
+        return Sets.newHashSet(Constants.CATEGORY_NAME_EXAMPLE);
     }
 
     @Override
@@ -49,14 +47,15 @@ public class ExampleProcessor extends AbstractCheckComponentCategoryContextProce
     }
 
     @Override
-    public void process(final ExecutionContext executionContext, final TemplateContentModel contentModel) throws ProcessException {
+    public void process(final ExecutionContext executionContext, final TemplateContentModel contentModel)
+            throws ProcessException {
 
         LOGGER.info("Example processor started  >>>>");
 
         final Resource resource = (Resource) executionContext.get(JAHIA_RESOURCE);
         if (null != resource) {
-            Object contentObject = contentModel.get(CONTENT);
-            ((Map) contentObject).put(EXAMPLE_KEY, EXAMPLE_TEXT_VALUE);
+            final Object contentObject = contentModel.get(CONTENT);
+            ((Map) contentObject).put(Constants.EXAMPLE_KEY, Constants.EXAMPLE_TEXT_VALUE);
         }
         LOGGER.info("Example processor finished >>>> \n");
     }
