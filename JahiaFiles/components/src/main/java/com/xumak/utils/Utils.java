@@ -11,7 +11,6 @@ import javax.jcr.RepositoryException;
 import java.util.List;
 import java.util.Map;
 
-
 /**
  *  DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
@@ -36,7 +35,7 @@ public class Utils {
      * @param resourceKey     The resource key that will retrieve in the content model.
      * @author mcali
      * */
-    public static Map<String, Object> getResourceAsMap (final TemplateContentModel contentModel, final String resourceKey){
+    public static Map<String, Object> getResourceAsMap(final TemplateContentModel contentModel, final String resourceKey){
 
         Map<String, Object> contentMap = null;
 
@@ -62,7 +61,7 @@ public class Utils {
             if (configMap.containsKey(propArray)){
                 listProperties = (List<String>)configMap.get(propArray);
             }
-        } catch (Exception e) {
+        } catch (ClassCastException e) {
             LOGGER.error("Error accessing the configuration object: " + e);
         }
         return listProperties;
@@ -76,12 +75,8 @@ public class Utils {
      * */
     public static String getConfigPropertyAsString(final Map configMap, final String propertyName){
         String property = "";
-        try {
-            if (configMap.containsKey(propertyName)){
-                property = configMap.get(propertyName).toString();
-            }
-        } catch (Exception e) {
-            LOGGER.error("Error accessing the configuration Object: " + e);
+        if (configMap.containsKey(propertyName)){
+            property = configMap.get(propertyName).toString();
         }
         return property;
     }
@@ -105,5 +100,4 @@ public class Utils {
         }
         return resourcePath;
     }
-
 }

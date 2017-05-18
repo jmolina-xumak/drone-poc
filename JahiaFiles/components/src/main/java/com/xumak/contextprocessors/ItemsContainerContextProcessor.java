@@ -35,9 +35,9 @@ import static com.xumak.Constants.NODE_ITEM_PROPERTIES;
 /**
  * DESCRIPTION
  * --------------------------------------------------------------------------------------------------------------------
- * This Context Processor get data from the child nodes of the current node.
- * It is used specifically in components container and its item; the context processor
- * get the whole data specified in the list in the xk-config.json and place it in the
+ * This Context Processor gets data from the children nodes of the current node.
+ * It is used specifically in component containers and its items; the context processor
+ * gets the whole data specified in the list in the xk-config.json and places it in the
  * scope "content" of the component container.
  * In the xk-config.json you have to have something like this structure:
  {
@@ -97,7 +97,7 @@ public class ItemsContainerContextProcessor extends AbstractCheckComponentCatego
                 List<String> nodeItemProperties = Utils.getConfigPropertyAsList(configMap, NODE_ITEM_PROPERTIES);
 
                 JCRNodeWrapper containerNode = resource.getNode();
-                if (StringUtils.isNotEmpty(containerName) && null != nodeItemProperties && containerNode.hasNode(containerName)){
+                if (StringUtils.isNotBlank(containerName) && null != nodeItemProperties && containerNode.hasNode(containerName)){
                     List<Map<String, Object>> listMaps = new ArrayList<>();
 
                     //Getting node according to specified in includeList tag specified by the developer.
