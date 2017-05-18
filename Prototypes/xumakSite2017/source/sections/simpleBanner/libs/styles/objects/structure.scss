@@ -30,9 +30,6 @@
   }
 
   &-title {
-    @include rem(font-size, 16px);
-    color: $color-vogue-blue;
-    font-family: $font-hurme-geometric-sans-bold;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -58,14 +55,13 @@
       display: table;
       height: 416px;
     }
-    
+
     &-content {
       display: table-cell;
       vertical-align: middle;
     }
 
     &-title {
-      @include rem(font-size, 20px);
       max-width: 80px;
     }
 
@@ -96,9 +92,7 @@
       margin-left: 20px;
     }
 
-    &-title {
-      @include rem(font-size, 24px);
-    }
+    &-title {}
 
   }
 
