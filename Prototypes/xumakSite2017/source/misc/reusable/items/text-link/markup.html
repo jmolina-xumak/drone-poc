@@ -1,1 +1,1 @@
-<a href="<% href %>" class="text-link <% class %>"> <% text %> </a>
+<a <%# if href %>href="{% <% href %> %}"<%/ if %> <%# if target %>{%# if <%target%> %} target="{% <% target %> %}"{%/ if %}<%/if%> class="text-link <% class %>"> <% text %> </a>

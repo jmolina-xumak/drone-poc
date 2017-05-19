@@ -1,10 +1,8 @@
 
 // Define the component colors and themes here
 // Use Bliss.
-
-//TODO: CAmbiar colores y font por su variable equivalente, implementar el mixin de REMS
-.Footerxk {
-    padding-bottom: 80px;
+.Mainfooter {
+    padding-bottom: 37px;
 
     &-mainList,
     &-secondaryList {
@@ -19,19 +17,19 @@
 
     &-mainLink {
         text-decoration: none;
-        color: #023047; 
+        color: $main-link-text-color; 
         font-weight: bold;
-        font-family: "HurmeGeometricSansBold", Arial;
-        font-size: 16px; 
+        font-family: $font-hurme-geometric-sans-bold;
+        @include rem(font-size, 16px);
         line-height: 44px;
     }
     
     &-copyText,
     &-secondaryLink {
-        font-family: "SourceSansProRegular", Arial;
-        font-size: 14px;
+        font-family: $font-source-sans-pro-regular;
+        @include rem(font-size, 14px);
         line-height: 24px;
-        color: #939393;
+        color: $secondary-text-color;
     }
 
     &-copyText {
@@ -39,8 +37,12 @@
         display: block;
     }
 
+    &-secondaryList {
+        display: table;
+        width: 100%;
+    }
     &-secondaryItem {
-        display: inline-block;
+        display: table-cell;
         margin-right: 30px;
     }
     &-secondaryLink {
@@ -60,8 +62,13 @@
         &-copyText {
             margin-top: 0;
         }
+        &-secondaryList {
+            display: block;
+            width: 100%;
+        }
         &-secondaryItem {
             margin-right: 11px;
+            display: inline-block;
         }
     }
 
@@ -76,7 +83,7 @@
         }
         &-copyText,
         &-secondaryLink {
-            font-size: 13px;
+            @include rem(font-size, 13px); 
         }
 
         &-secondaryList {
@@ -88,17 +95,3 @@
         }
     } 
 }
-
-//Hack to solve foundation columns paddings
-.no-gutter {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-.no-gutter-large {
-    @media screen and (min-width: 64em){
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    } 
-}
-
