@@ -25,9 +25,7 @@ import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
 import static layerx.jahia.Constants.JAHIA_RESOURCE;
-import static layerx.Constants.LOW_PRIORITY;
-import static layerx.Constants.CONTENT;
-import static layerx.Constants.CONFIG_PROPERTIES_KEY;
+import layerx.Constants;
 import static com.xumak.Constants.GET_ITEMS_PROPERTIES;
 import static com.xumak.Constants.COMPONENT_CONTAINER_NAME;
 import static com.xumak.Constants.NODE_ITEM_PROPERTIES;
@@ -81,15 +79,15 @@ public class ItemsContainerContextProcessor extends
 
     @Override
     public int priority() {
-        return LOW_PRIORITY;
+        return Constants.LOW_PRIORITY;
     }
 
     @Override
     public void process(
             final ExecutionContext executionContext, final TemplateContentModel contentModel) throws ProcessException {
 
-        final Map<String, Object> contentMap = Utils.getResourceAsMap(contentModel, CONTENT);
-        final Map<String, Object> configMap = Utils.getResourceAsMap(contentModel, CONFIG_PROPERTIES_KEY);
+        final Map<String, Object> contentMap = Utils.getResourceAsMap(contentModel, Constants.CONTENT);
+        final Map<String, Object> configMap = Utils.getResourceAsMap(contentModel, Constants.CONFIG_PROPERTIES_KEY);
         final Resource resource = (Resource) executionContext.get(JAHIA_RESOURCE);
         if (null != resource) {
             try {
@@ -112,7 +110,7 @@ public class ItemsContainerContextProcessor extends
                         final Map<String, Object> elementMap = new HashMap<String, Object>();
 
                         //Getting all properties on each node specified as a list values in "nodeItemProperties"
-                        for (String prop : nodeItemProperties) {
+                        for (final String prop : nodeItemProperties) {
                             if (contentItem.hasProperty(prop)) {
 
                                 //Validate type of property in the node.

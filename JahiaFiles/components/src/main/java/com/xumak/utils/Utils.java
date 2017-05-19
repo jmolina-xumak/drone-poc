@@ -24,8 +24,14 @@ import java.util.Map;
  * -------------------------------------------------------------------------------------------------------
  */
 
-public class Utils {
+public final class Utils {
     private static final Logger LOGGER = LoggerFactory.getLogger(Utils.class);
+
+    /**
+     *
+     */
+    private Utils() {
+    }
 
     /**
      * This method is used to retrieve resource in the content model according to resourceKey parameter; the content
