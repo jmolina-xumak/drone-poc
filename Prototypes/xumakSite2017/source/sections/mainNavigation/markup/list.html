@@ -1,0 +1,16 @@
+<ul>
+  {%#each this%}
+    <li>
+      <a href="{% link %}">{% title %}</a>
+         {%#if pages%}
+
+          {%#with pages%}
+
+            {%> list %}
+
+          {%/with%} 
+
+         {%/if%}
+    </li>
+  {%/each%}
+</ul> 
