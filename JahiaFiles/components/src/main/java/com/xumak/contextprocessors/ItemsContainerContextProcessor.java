@@ -34,7 +34,7 @@ import static com.xumak.Constants.NODE_ITEM_PROPERTIES;
 
 /**
  * DESCRIPTION
- * --------------------------------------------------------------------------------------------------------------------
+ * ------------------------------------------------------------------------------------------------------------------
  * This Context Processor gets data from the children nodes of the current node.
  * It is used specifically in component containers and its items; the context processor
  * gets the whole data specified in the list in the xk-config.json and places it in the
@@ -59,18 +59,18 @@ import static com.xumak.Constants.NODE_ITEM_PROPERTIES;
  and the "nodeItemProperties" is a list of properties tha you are going to specify as
  properties in your item component.
 
- *  -------------------------------------------------------------------------------------------------------------------
- * 	CHANGE	HISTORY
- *	-------------------------------------------------------------------------------------------------------------------
- *	Version	|	Date		|	Developer				|	Changes
- *	1.0		|	05/18/2017	|	Marco Cali  			|	Initial	Creation
- *	-------------------------------------------------------------------------------------------------------------------
- *
+ * ------------------------------------------------------------------------------------------------------------------
+ * CHANGE HISTORY
+ * ------------------------------------------------------------------------------------------------------------------
+ * Version     |Date         |Developer               |Changes
+ * 1.0         |05/18/2017   |Marco Cali              |Initial Creation
+ * ------------------------------------------------------------------------------------------------------------------
  */
 
 @Component
 @Service
-public class ItemsContainerContextProcessor extends AbstractCheckComponentCategoryContextProcessor<TemplateContentModel> {
+public class ItemsContainerContextProcessor extends
+        AbstractCheckComponentCategoryContextProcessor<TemplateContentModel> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemsContainerContextProcessor.class);
 
@@ -85,38 +85,43 @@ public class ItemsContainerContextProcessor extends AbstractCheckComponentCatego
     }
 
     @Override
-    public void process(ExecutionContext executionContext, TemplateContentModel contentModel) throws ProcessException {
+    public void process(
+            final ExecutionContext executionContext, final TemplateContentModel contentModel) throws ProcessException {
 
-        Map<String, Object> contentMap = Utils.getResourceAsMap(contentModel, CONTENT);
-        Map<String, Object> configMap = Utils.getResourceAsMap(contentModel, CONFIG_PROPERTIES_KEY);
-        Resource resource = (Resource) executionContext.get(JAHIA_RESOURCE);
-        if (null != resource){
+        final Map<String, Object> contentMap = Utils.getResourceAsMap(contentModel, CONTENT);
+        final Map<String, Object> configMap = Utils.getResourceAsMap(contentModel, CONFIG_PROPERTIES_KEY);
+        final Resource resource = (Resource) executionContext.get(JAHIA_RESOURCE);
+        if (null != resource) {
             try {
                 //Getting xk configurations for the current component
-                String containerName = Utils.getConfigPropertyAsString(configMap, COMPONENT_CONTAINER_NAME);
-                List<String> nodeItemProperties = Utils.getConfigPropertyAsList(configMap, NODE_ITEM_PROPERTIES);
+                final String containerName = Utils.getConfigPropertyAsString(configMap, COMPONENT_CONTAINER_NAME);
+                final List<String> nodeItemProperties = Utils.getConfigPropertyAsList(configMap, NODE_ITEM_PROPERTIES);
 
-                JCRNodeWrapper containerNode = resource.getNode();
-                if (StringUtils.isNotBlank(containerName) && null != nodeItemProperties && containerNode.hasNode(containerName)){
-                    List<Map<String, Object>> listMaps = new ArrayList<>();
+                final JCRNodeWrapper containerNode = resource.getNode();
+                if (StringUtils.isNotBlank(containerName) && null != nodeItemProperties
+                        && containerNode.hasNode(containerName)) {
+                    final List<Map<String, Object>> listMaps = new ArrayList<>();
 
                     //Getting node according to specified in includeList tag specified by the developer.
-                    JCRNodeWrapper nodeElements = containerNode.getNode(containerName);
+                    final JCRNodeWrapper nodeElements = containerNode.getNode(containerName);
 
                     //Getting all nodes of the component item edited by the author in the component container.
-                    JCRNodeIteratorWrapper contentNodes = nodeElements.getNodes();
+                    final JCRNodeIteratorWrapper contentNodes = nodeElements.getNodes();
                     while (contentNodes.hasNext()) {
-                        Node contentItem = contentNodes.nextNode();
-                        Map<String, Object> elementMap = new HashMap<String, Object>();
+                        final Node contentItem = contentNodes.nextNode();
+                        final Map<String, Object> elementMap = new HashMap<String, Object>();
 
-                        //Getting all properties on each node specified as a list values in "nodeItemProperties" in the xk-config.json
-                        for(String prop : nodeItemProperties) {
+                        //Getting all properties on each node specified as a list values in "nodeItemProperties"
+                        for (String prop : nodeItemProperties) {
                             if (contentItem.hasProperty(prop)) {
 
                                 //Validate type of property in the node.
-                                if(contentItem.getProperty(prop).getType() == PropertyType.WEAKREFERENCE) {
-                                    String resourceNodeUUID = contentItem.getProperty(prop).getValue().getString();
-                                    elementMap.put(prop, Utils.getResourceNodePath(containerNode.getSession(), resourceNodeUUID));
+                                if (contentItem.getProperty(prop).getType() == PropertyType.WEAKREFERENCE) {
+                                    final String resourceNodeUUID =
+                                            contentItem.getProperty(prop).getValue().getString();
+                                    final String resourcePath = Utils.getResourceNodePath(
+                                            containerNode.getSession(), resourceNodeUUID);
+                                    elementMap.put(prop, resourcePath);
                                 } else {
                                     elementMap.put(prop, contentItem.getProperty(prop).getValue().getString());
                                 }
@@ -126,11 +131,8 @@ public class ItemsContainerContextProcessor extends AbstractCheckComponentCatego
                     }
                     contentMap.put(NODE_ITEM_PROPERTIES, listMaps);
                 }
-            } catch (RepositoryException e){
-                LOGGER.error("Repository Exception found: " , e);
-            }
-            catch (Exception ex){
-                LOGGER.error("An error occurred Exception found: " , ex);
+            } catch (RepositoryException e) {
+                LOGGER.error("Repository Exception found: ", e);
             }
         }
     }
