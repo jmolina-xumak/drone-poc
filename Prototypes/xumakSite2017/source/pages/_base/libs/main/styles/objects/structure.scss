@@ -5,18 +5,19 @@
 
 @font-face {
 	font-family: "HurmeGeometricSansBold";
-	src: url("vendor/fonts/HurmeGeometricSans3-Bold.otf?") format("otf"),
-		 url("vendor/fonts/HurmeGeometricSans3-Bold.ttf?") format("ttf");
+	src: url("/assets/main/fonts/HurmeGeometricSans3/HurmeGeometricSans3-Bold.otf?");
+	src: url("/assets/main/fonts/HurmeGeometricSans3/HurmeGeometricSans3-Bold.otf?") format("opentype"),
+		 url("/assets/main/fonts/HurmeGeometricSans3/HurmeGeometricSans3-Bold.ttf?") format("truetype");
 }
 
 @font-face {
 	font-family: "SourceSansProRegular";
-	src: url("vendor/fonts/SourceSansPro-Regular.otf?") format("otf"),
-		 url("vendor/fonts/SourceSansPro-Regular.ttf?") format("ttf");
+	src: url("/assets/main/fonts/SourceSansPro/SourceSansPro-Regular.otf?") format("opentype"),
+		 url("/assets/main/fonts/SourceSansPro/SourceSansPro-Regular.ttf?") format("truetype");
 }
 
 @font-face {
 	font-family: "SourceSansProSemibold";
-	src: url("vendor/fonts/SourceSansPro-Semibold.otf?") format("otf"),
-		 url("vendor/fonts/SourceSansPro-Semibold.ttf?") format("ttf");
+	src: url("/assets/main/fonts/SourceSansPro/SourceSansPro-Semibold.otf?") format("opentype"),
+		 url("/assets/main/fonts/SourceSansPro/SourceSansPro-Semibold.ttf?") format("truetype");
 }
