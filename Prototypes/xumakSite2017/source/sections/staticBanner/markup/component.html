@@ -18,14 +18,16 @@
                     {% embed "button" with '{
                         "text": "mainCallToActionText",
                         "hasIcon": "mainCallToActionHasIcon",
+                        "target": "mainCallToActionTarget",
                         "href": "mainCallToActionURL"
                     }' local_context=content %}
                     <div class="StaticBanner-linkBox">
                         {% embed "text-link" with '{
-                            "text": "{% content.secondaryCallToActionText %}",
+                            "text": "secondaryCallToActionText",
                             "class": "StaticBanner-link",
-                            "href": "{% content.mainsecondaryCallToActionURL %}"
-                        }' %}
+                            "target": "secondaryCallToActionTarget",
+                            "href": "secondaryCallToActionURL"
+                        }' local_context=content%}
                     </div>
                 </div>
             </div>
