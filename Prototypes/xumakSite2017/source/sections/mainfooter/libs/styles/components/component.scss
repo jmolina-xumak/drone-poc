@@ -25,7 +25,7 @@
     }
 
 
-    @media screen and (min-width: 765px) {
+    @media screen and (min-width: $breakpoint-tablet) {
 
         &-copyText,
         &-secondaryLink {
