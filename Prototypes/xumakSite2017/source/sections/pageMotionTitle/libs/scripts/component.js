@@ -4,32 +4,31 @@ Vue.component( 'page-motion-title', {
     props: [
     'controller',
     ],
-    template: '<p id="XumakText" class="XumakText"><slot></slot></p>',
+    template: '<slot></slot>',
     mounted: function() {
 
-    var tlXumakText = new TimelineMax ();
-    var tl2 = new TimelineLite(),
-    contentParsys = document.getElementById( 'contentParsys' ),
-    xumakText = this.$el,
-    HeightChilds = contentParsys.lastElementChild.clientHeight + this.$el.parentElement.offsetHeight,
-    distancia = xumakText.offsetWidth * -1;
+      var tlXumakText = new TimelineMax (),
+      tl2 = new TimelineLite(),
+      mainText = this.$el,
 
-    if ( document.body.scrollTop === 0 ){
-    tlXumakText.from( this.$el, 1.5, { left: '100vw' }, '0' );
-    tlXumakText.play( );
-    }
+      distancia = mainText.offsetWidth * -1;
 
-    tl2.to( $( this.$el ), 1, { left: distancia + 'px' }, '0' );
-    tl2.play();
+      if ( document.body.scrollTop === 0 ) {
+        tlXumakText.from( mainText, 1.5, { left: '100vw' }, '0' );
+        tlXumakText.play( );
+      }
 
-    new ScrollMagic.Scene({
-    duration: HeightChilds + 'px', //duration:'200%'
-    } )
-    .setTween( tl2 )
-    .triggerHook( 0 )
-    .triggerElement( '#xmkApp' )
-    .addIndicators( {name: 'text '} )
-    .addTo( this.controller );
+      tl2.to( $( this.$el ), 1, { left: distancia + 'px' }, '0' );
+      tl2.play();
+
+      new ScrollMagic.Scene({
+        duration: '200%',
+      } )
+      .setTween( tl2 )
+      .triggerHook( 0 )
+      .triggerElement( '#xmkApp' )
+      .addIndicators( {name: 'text '} )
+      .addTo( this.controller );
 
     },
   }

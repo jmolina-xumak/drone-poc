@@ -69,5 +69,11 @@
       template: '#xmk-select'
     });
 
-    new Vue({}).$mount('#xmkApp');
+new Vue({
+        data: function(){
+        return {
+            smcontroller: new ScrollMagic.Controller()
+        };
+    }
+    }).$mount('#xmkApp');
 })();
