@@ -74,6 +74,12 @@
             "description": "page description"
           }
         ]
+      },
+      {
+        "title": "Page Number",
+        "subtitle": "subtitle of page",
+        "link": "/content/bedrock.html",
+        "hasChildren": false
       }
     ]
   }
