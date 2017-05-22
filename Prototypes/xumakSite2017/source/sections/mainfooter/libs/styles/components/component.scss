@@ -2,32 +2,11 @@
 // Define the component colors and themes here
 // Use Bliss.
 .Mainfooter {
-
     &-mainLink {
-        text-decoration: none;
         color: $main-link-text-color; 
-        font-weight: bold;
-        font-family: $font-hurme-geometric-sans-bold;
-        @include rem(font-size, 16px);
-        line-height: 44px;
     }
-    
     &-copyText,
     &-secondaryLink {
-        font-family: $font-source-sans-pro-regular;
-        @include rem(font-size, 14px);
-        line-height: 24px;
         color: $secondary-text-color;
     }
-
-    &-secondaryLink {
-        text-decoration: underline;
-    }
-
-    @media screen and (min-width: $breakpoint-desktop){
-        &-copyText,
-        &-secondaryLink {
-            @include rem(font-size, 13px); 
-        }
-    } 
 }
