@@ -5,7 +5,7 @@
     <ul>
         <li class="MainNavigation-item"v-for="item in menu.pages">
             <a class="MainNavigation-link" 
-               v-bind:href="item.link" 
+               v-bind:href="item.hasChildren ? '#' : item.link" 
                v-on:click="toggleSubMenu(item.hasChildren)" 
                v-on:keyup.enter="toggleSubMenu(item)" 
                v-bind:class="{isActive : item.isExpanded}"
@@ -22,7 +22,7 @@
                 v-bind:class="{ isExpanded: item.isExpanded }"  
                 v-bind:aria-hidden="[!item.isExpanded]">
                 <li class="MainNavigation-subItem">
-                    <a v-bind:href="item.link">
+                    <a v-bind:href="item.hasChildren ? item.link : '#'">
                         sub title: {{item.subtitle}}
                     </a>
                 </li>
