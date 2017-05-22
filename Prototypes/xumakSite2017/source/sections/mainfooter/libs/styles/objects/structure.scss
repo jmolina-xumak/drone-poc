@@ -19,6 +19,21 @@
         display: block;
     }
 
+    &-mainLink {
+        text-decoration: none;
+        font-weight: bold;
+        font-family: $font-hurme-geometric-sans-bold;
+        @include rem(font-size, 16px);
+        line-height: 44px;
+    }
+
+    &-copyText,
+    &-secondaryLink {
+        font-family: $font-source-sans-pro-regular;
+        @include rem(font-size, 14px);
+        line-height: 24px;
+    }
+
     &-copyText {
         margin-top: 14px;
         display: block;
@@ -32,6 +47,9 @@
         display: table-cell;
         margin-right: 30px;
     }
+    &-secondaryLink {
+        text-decoration: underline;
+    }
 
 
     @media screen and (min-width: $breakpoint-tablet) {
@@ -43,6 +61,10 @@
         &-mainItem {
             display: inline-block;
             margin-right: 43px;
+        }
+        &-copyText,
+        &-secondaryLink {
+            @include rem(font-size, 13px); 
         }
         &-copyText {
             margin-top: 0;
