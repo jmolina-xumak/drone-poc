@@ -1,0 +1,118 @@
+
+// Define the component colors and themes here
+// Use Bliss.
+
+$menu-width: 200px;
+
+//MENU TESTING
+.menu {
+    position: absolute;
+    top: 0px;
+    height: 25px;
+    width: 100vw;
+    background-color: rgba(255,0,0,0.75);
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.quote { 
+    min-height: 352px;
+    margin-top: 25px;
+    background-color: #199fbc;
+    font-family: $font-hurme-geometric-sans-bold;
+
+    p {
+        margin: 0;
+    }
+
+    .content {
+        border: 1px solid red;
+        min-height: 352px;
+        display: table;
+        width: 100%;
+    }
+
+    .content .columns {
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+    }
+
+    .quotes { 
+        font-family: $font-source-sans-pro-semibold;
+        font-weight: 800 ;
+        color: #0d426a;
+    }
+
+    .quotes.pull-right {
+        text-align: right;
+    }
+
+    .text { 
+        font-weight: bold;
+        color: #ffffff;
+        font-size: 26px;
+    }
+
+    .authorName { 
+        font-family: "Arial";
+        font-weight: bold;
+        color: #fff02a;
+        font-size: 22px;
+    }
+
+    .authorTitle { 
+        font-weight: normal;
+        color: #fff02a;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    /* For tablets: */    
+
+    .quote  {
+        .quotes { 
+            font-size: 160px;
+        }
+        .text { 
+            font-size: 38px;
+        }
+        .authorName { 
+            font-size: 26px;
+        }
+        .authorTitle { 
+            font-size: 18px;
+        }        
+    }
+
+}
+@media only screen and (min-width: 1024px) {
+    /* For desktop: */
+    
+    .quote  {
+        padding-left: $menu-width;
+
+        .quotes { 
+            font-size: 150px;
+        }
+        .text { 
+            font-size: 36px;
+        }
+        .authorName { 
+            font-size: 26px;
+        }
+        .authorTitle { 
+            font-size: 18px;
+        }
+    }
+    
+    //MENU TESTING
+    .menu {
+        height: 100vh;
+        width: $menu-width;
+        text-align: left;
+    }
+
+}

@@ -1,0 +1,9 @@
+{
+  "id": "cq.wcm.edit",
+  "assets": [
+    "assets/double-quotes.svg"
+  ],
+  "styles" : [
+    "styles/placeholder.scss"
+  ]
+}
