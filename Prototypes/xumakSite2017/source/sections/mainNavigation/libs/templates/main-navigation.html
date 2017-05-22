@@ -1,0 +1,38 @@
+<div class="MainNavigation">
+    <div class="MainNavigation-logoBox">
+        <img v-bind:src="dataImagePath" v-bind:alt="dataImageAltText">
+    </div>
+    <ul>
+        <li class="MainNavigation-item"v-for="item in menu.pages">
+            <a class="MainNavigation-link" 
+               v-bind:href="item.link" 
+               v-on:click="toggleSubMenu(item.hasChildren)" 
+               v-on:keyup.enter="toggleSubMenu(item)" 
+               v-bind:class="{isActive : item.isExpanded}"
+               v-bind:aria-expanded="[item.isExpanded]">
+                {{item.title}}
+                <svg v-if="item.hasChildren" 
+                    v-bind:class="{ isExpanded: item.isExpanded }" 
+                    class="icon icon-chevron-down Menu-itemArrow">
+                    <use xlink:href="#icon-chevron-down"></use>
+                </svg>
+            </a>
+            <ul class="MainNavigation-sublist"
+                v-if="item.hasChildren" 
+                v-bind:class="{ isExpanded: item.isExpanded }"  
+                v-bind:aria-hidden="[!item.isExpanded]">
+                <li class="MainNavigation-subItem">
+                    <a v-bind:href="item.link">
+                        sub title: {{item.subtitle}}
+                    </a>
+                </li>
+                <li class="MainNavigation-subItem"  v-on:keyup.tab="disableTab(item)"  v-for="subitem in item.pages">
+                    <a v-bind:href="subitem.link" class="MainNavigation-subLink">
+                        {{ subitem.title }}
+                        <span class="MainNavigation-subItemDesc"> {{subitem.description}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
