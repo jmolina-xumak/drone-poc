@@ -1,0 +1,14 @@
+{
+  "content": {
+    "backgroundColor":"#199fbc",
+		"mainTitle":"Put customers first whit seamless digital marketing solutions",
+		"description":"",
+		"buttonLabel":"Our solutions",
+		"buttonUrl":" http://xumak.com",
+		"buttonTarget":"_blank",
+    "buttonHasIcon": true,
+		"mediaURL":"https://dummyimage.com/960x340/ddd/ddd.png",
+		"mediaAlt":"Imagen Dummy",
+		"disableFilter": false
+  }
+}
