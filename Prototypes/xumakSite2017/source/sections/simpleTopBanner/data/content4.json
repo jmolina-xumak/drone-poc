@@ -7,7 +7,7 @@
 		"buttonUrl":" http://xumak.com",
 		"buttonTarget":"_blank",
     "buttonHasIcon": true,
-		"mediaURL":"",
+		"mediaURL":"http://lorempixel.com/1200/600/people/",
 		"mediaAlt":"Imagen Dummy",
 		"disableFilter": true
   }

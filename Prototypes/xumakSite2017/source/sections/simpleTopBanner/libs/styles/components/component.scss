@@ -1,3 +1,16 @@
+.SimpleTopBanner {
+    &-title {
+        color: $color-primary;
+    }
+    &-text {
+         color: $color-primary;
+    }
+}
 
-// Define the component colors and themes here
-// Use Bliss.
+.SimpleTopBanner--filter {
+    .SimpleTopBanner {
+        &-filter {
+            background-color: $color-filter;
+        }
+    }
+}
