@@ -2,13 +2,28 @@
 // Define the component colors and themes here
 // Use Bliss.
 .MainNavigation {
-    .clase1{
-        background-color: yellow;
+    background-color: $main-background;
+    
+    &-link,
+    &-description {
+        color: $text-color;
     }
-    .clase2{
-        background-color: blue;
+    &-subLink {
+        color: $title-color;
     }
-    .clase3{
-        background-color: red;
+    &-subList {
+        background-color: $secondary-background; 
     }
+
+    @media(min-width: $breakpoint-desktop){
+    /* ---  States --- */
+        
+        &-link:hover {
+            background-color: $secondary-background;
+        }
+        &-link.isActive {
+            background-color: $secondary-background;
+        }
+    }
+
 }

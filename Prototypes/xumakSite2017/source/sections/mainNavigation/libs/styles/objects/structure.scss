@@ -2,3 +2,109 @@
 // Define the component structure here
 // Use Bliss.
 // Don't specify colors properties.
+.MainNavigation {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    z-index: 9999;
+    right: -100%;
+    transition: right .5s ease;
+
+    &-list,
+    &-subList {
+        margin: 0;
+        padding: 0;
+    }
+    &-item,
+    &-subItem {
+        list-style: none;
+    }
+    &-link,
+    &-subLink {
+        width: 100%;
+        display: block;
+        font-family: $font-hurme-geometric-sans-bold;
+        @include rem(font-size, 14px);
+        line-height: 40px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    &-subList {
+        max-height: 0;
+        overflow: hidden;
+        overflow-y: auto;
+        transition: max-height .3s ease;
+    }
+    &-link {
+        padding: 0 20px;
+        transition: all .5s ease;
+    }
+    &-subLink {
+        padding: 0 40px;
+    }
+    &-description {
+        display: none;
+        font-family: $font-source-sans-pro-regular;
+        @include rem(font-size, 14px);
+        line-height: 24px;
+        margin: 0;
+        text-transform: none;
+    }
+    &-arrow {
+        transform: rotate(270deg);
+        transition: transform .5s ease;
+    }
+    &-closeBox {
+        padding: 0 20px;
+        margin-top: 10px;
+    }
+    &-closeButton,
+    &-iconClose {
+        height: 25px;
+    }
+    &-closeButton {
+        float: right;
+        width: 20px;
+    }
+    &-iconClose {
+        width: 25px;
+    }
+
+    &-menuButton {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+        opacity: 1;
+        transition: opacity .5s ease;
+    }
+
+    &-overlay {
+        background-color: #000000;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9998;
+        position: fixed;
+        top: 0;
+    }
+    /*--- States ---*/
+    &.isVisible {
+        right: 0;
+    }
+    &-menuButton.isVisible {
+        opacity: 0;
+    } 
+    &-overlay.isVisible {
+        opacity: 0.7;
+        display: block;
+    }
+    &-subList.isExpanded {
+        max-height: 160px;
+        transition: max-height .5s ease;
+    }
+    &-arrow.isActive {
+        transform: rotate(90deg);
+    }
+}
