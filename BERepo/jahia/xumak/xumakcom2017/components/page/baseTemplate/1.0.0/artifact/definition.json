@@ -12,5 +12,7 @@
     "contextProcessors": []
   },
   "dialogs": {
+  },
+  "jahia": {
   }
 }
