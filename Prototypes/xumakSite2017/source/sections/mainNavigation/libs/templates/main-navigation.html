@@ -1,4 +1,4 @@
-<div class="MainNavigation" v-bind:class="{isVisible: menu.isVisible}">
+<div class="MainNavigation isSlidedOut" v-bind:class="{isVisible: menu.isVisible}">
     <button class="MainNavigation-menuButton" 
             v-on:click="toggleMenu"
             v-bind:class="{isVisible: menu.isVisible}">
@@ -21,8 +21,12 @@
     <div class="MainNavigation-logoBox">
         <img v-bind:src="dataImagePath" v-bind:alt="dataImageAltText">
     </div>
-    <ul class="MainNavigation-list">
-        <li class="MainNavigation-item" v-for="item in menu.pages">
+    <ul class="MainNavigation-list"
+        v-on:mouseover="mouseIn"
+        v-on:mouseleave="mouseOut">
+        <li class="MainNavigation-item" v-for="item in menu.pages"
+            v-on:mouseover="mouseEnter(item)"
+            v-on:mouseleave="mouseLeave(item)">
             <a class="MainNavigation-link" 
                v-bind:href="item.hasChildren ? '#' : item.link" 
                v-on:click="toggleSubMenu(item)" 

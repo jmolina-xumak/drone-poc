@@ -7,10 +7,10 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 80%;
+    width: 100%;
     z-index: 9999;
     right: -100%;
-    transition: right .5s ease;
+    transition: all .5s ease;
 
     &-list,
     &-subList {
@@ -89,7 +89,59 @@
         position: fixed;
         top: 0;
     }
+    /* --- Tablet --- */
+    @media(min-width:$breakpoint-tablet) {
+        width: 335px;
+    }
+
+    /* --- Desktop --- */
+    @media(min-width:$breakpoint-desktop){
+        @keyframes in {
+            from {width: 0}
+            to {width: 240px}
+        }
+
+        @keyframes out {
+            from {width: 240px }
+            to {width: 0 }
+        }
+
+        width: 240px;
+        right: auto;
+        left: 0;
+        transition: all .25s ease;  
+        background-size: 200% 100%;
+        
+        &-subList {
+            position: fixed;
+            left: 240px;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            min-height: 100%;
+            transition: all .5s ease;
+        }
+        &-subItem {
+            width: 240px;
+        }
+
+        &-closeButton,
+        &-menuButton {
+            display: none;
+        } 
+        &-description {
+            display: block;
+        }
+    }
+
     /*--- States ---*/
+    &.isSlidedIn {
+        background-position: 0 0;
+    }
+    &.isSlidedOut{
+        background-position: 100% 0;
+    }
+
     &.isVisible {
         right: 0;
     }
@@ -107,4 +159,12 @@
     &-arrow.isActive {
         transform: rotate(90deg);
     }
+
+    /* --- States Breakpoints --- */
+    @media(min-width: $breakpoint-desktop) {
+        &.isVisible {
+            right: auto;
+        }  
+    }
+
 }

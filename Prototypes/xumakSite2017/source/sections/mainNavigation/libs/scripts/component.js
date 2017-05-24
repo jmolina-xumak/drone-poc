@@ -21,29 +21,23 @@ Vue.component('mainNavigation', function mainNavCreator(resolve, reject) {
             },
             methods: {
                 toggleSubMenu: function(item){
-                    let isExpanded = !item.isExpanded;
+                    if(item.hasChildren){
+                        let isExpanded = !item.isExpanded;
 
-                    this.menu.pages = this.menu.pages.map(function(el){
-                        el.isExpanded = false;
-                        return el;
-                    });
-                    if(isExpanded === true ){
-                        item.isExpanded = isExpanded;
-                    }
-
-/*                    if(hasChilds){
-                        //toggleMenu
-                        alert('Toggle menu');
-                    } else {
+                        this.menu.pages = this.menu.pages.map(function(el){
+                            el.isExpanded = false;
+                            return el;
+                        });
+                        if(isExpanded === true ){
+                            item.isExpanded = isExpanded;
+                        }
+                    }else {
                         return false;
-                    }*/
-
+                    }
                 },
                 toggleMenu: function() {
                     this.menu.isVisible = !this.menu.isVisible;
-
-                    
-
+  
                     if ( this.menu.isVisible ) {
                         $('<div class="MainNavigation-overlay"/>').appendTo('body').animate({
                             opacity: .8
@@ -56,8 +50,35 @@ Vue.component('mainNavigation', function mainNavCreator(resolve, reject) {
                             $(this).remove();
                         });
                     }
-                }
+                },
+                mouseIn: function() {
+                    $('.MainNavigation').addClass('isSlidedIn').removeClass('isSlidedOut');
+                },
+                mouseOut: function(){
+                    $('.MainNavigation').addClass('isSlidedOut').removeClass('isSlidedIn');    
+                },
+                mouseEnter: function(item){
+                    
+                    if(item.hasChildren) {
+                        $('.MainNavigation-subList.isExpanded').css({
+                            'animation':'in .5s .3s ease forwards'
+                        });
+                    } else {
+                        return false;
+                    }
 
+                },
+                mouseLeave: function(item){
+
+                    if(item.hasChildren) {
+                        $('.MainNavigation-subList.isExpanded').css({
+                            'animation':'out .5s ease forwards'
+                        });
+                    } else {
+                        return false;
+                    }
+
+                }
             }
         })
     });

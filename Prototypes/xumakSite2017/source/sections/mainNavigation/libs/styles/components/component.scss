@@ -16,7 +16,15 @@
     }
 
     @media(min-width: $breakpoint-desktop){
-    /* ---  States --- */
+        
+        background-color: transparent;
+
+        /* ---  States --- */
+
+        &.isSlidedIn,
+        &.isSlidedOut {
+            background-image: linear-gradient(to left, transparent, transparent 50%, $main-background 50%, $main-background);
+        }
         
         &-link:hover {
             background-color: $secondary-background;
