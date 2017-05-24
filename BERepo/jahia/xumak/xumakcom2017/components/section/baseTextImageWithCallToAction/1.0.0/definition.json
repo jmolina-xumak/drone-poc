@@ -1,0 +1,61 @@
+{
+	"title": "Base Text and Image With Call To Action",
+	"description": "Base Item with image, title, description and link inside a container component",
+	"name": "baseTextImageWithCallToAction",
+	"address": "xumak:xumakcom2017:components:section:baseTextImageWithCallToAction",
+	"version": "1.0.0",
+	"extends": "bedrock:core:components:section:base;1.0.0",
+	"tags": [
+		"xumakcom2017",
+		"Base text and image With call to action",
+		"Base",
+		"Text and Image"
+	],
+	"blueprint": {
+		"content.imagePath": "∫(⊛)",
+		"content.imageAltText": "∫(⊛)",
+		"content.title": "∫(⊛)",
+		"content.description": "∫(⊛)",
+		"content.link": "∫(⊛)",
+		"content.linkText": "∫(⊛)",
+		"content.linkTarget": "∫(⊛)"
+	},
+	"jahia": {
+		"superType": "",
+		"properties": {
+			"title": {
+				"type": "string"
+			},
+			"description": {
+				"type": "textarea"
+			},
+			"imagePath": {
+				"type": "path",
+				"selector": "picker",
+				"selector-options": [
+					"type='image'"
+				]
+			},
+			"imageAltText": {
+				"type": "string"
+			},
+			"link": {
+				"type": "path",
+				"selector": "picker",
+				"selector-options": [
+					"type='page'"
+				]
+			},
+			"linkText": {
+				"type": "string"
+			},
+			"linkTarget": {
+              "type": "string",
+              "selector": "choicelist",
+              "selector-options": ["resourceBundle"],
+              "default-values": ["SameTab"],
+              "constraints": ["NewTab", "SameTab"]
+            }
+		}
+	}
+}
