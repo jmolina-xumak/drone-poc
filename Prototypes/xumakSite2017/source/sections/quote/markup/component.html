@@ -1,27 +1,21 @@
-<div class="menu">MENU</div>
+<div class="menu debug">DEBUG MENU</div>
 
-<div class="quote">
-    
-    <div class="row">
-        <div class="small-12 medium-12 large-offset-1 large-10 columns"> 
-            <div class="quotes">“</div>   
-        </div>
+<div class="row Quote-IconsRow">
+    <div class="small-12 medium-12 large-12 columns"> 
+        <div><i class="Quote-IconsRow-icon icon-dblquotes"></i></div>
     </div>
-    
-    <div class="row content">
-        <div class="small-12 medium-offset-1 medium-10 large-offset-2 large-9 columns">
-            <p class="text">We absolutely loved working with Xumak. They are fast, highly collaborative and knowledgable.</p>
-            <p class="authorName">Firstname Lastname</p>
-            <p class="authorTitle">Chief Marketing Officer, CenturyLink</p>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="small-12 medium-12 large-offset-1 large-10 columns"> 
-            <div class="quotes pull-right">”</div>
-        </div>
-    </div>
-
 </div>
 
-<img src="libs/authoring/assets/double-quotes.svg" />
+<div class="row Quote-Content">
+    <div class="small-12 medium-offset-1 medium-10 large-offset-1 large-9 columns">
+        <p class="Quote-Content-text">{% content.text %}</p>
+        <p class="Quote-Content-authorName">{% content.authorName %}</p>
+        <p class="Quote-Content-authorTitle">{% content.authorTitle %}</p>
+    </div>
+</div>
+
+<div class="row Quote-IconsRow">
+    <div class="small-12 medium-12 large-offset-10 large-1 columns"> 
+        <div><i class="Quote-IconsRow-icon icon-dblquotes--reverse icon--right"></i></div>
+    </div>
+</div>

@@ -2,117 +2,94 @@
 // Define the component colors and themes here
 // Use Bliss.
 
-$menu-width: 200px;
+.Quote{ 
+    background-color: $Quote-color--background;
 
-//MENU TESTING
-.menu {
-    position: absolute;
-    top: 0px;
-    height: 25px;
-    width: 100vw;
-    background-color: rgba(255,0,0,0.75);
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Arial Black', sans-serif;
+    &-Content {
+
+        &-text {         
+            color: $Quote-color--text;
+            font-family: $Quote-text--regular;
+            font-weight: 800;
+            font-size: 26px;
+            line-height: 32px;
+        }
+
+        &-authorName { 
+            color: $Quote-color--accent;
+            font-family: $Quote-text--regular;
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &-authorTitle { 
+            color: $Quote-color--accent;
+            font-family: $Quote-text--subtle;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+        }
+        
+    }
+
+    &-IconsRow {
+
+        .icon {
+            
+            &-dblquotes {
+                background-image: url(/assets/main/images/doubleQuotes.svg);
+                
+                &--reverse {
+                    background-image: url(/assets/main/images/doubleQuotes.svg);
+                }
+            }
+        }
+    }
+    
 }
 
-.quote { 
-    min-height: 352px;
-    margin-top: 25px;
-    background-color: #199fbc;
-    font-family: $font-hurme-geometric-sans-bold;
-
-    p {
-        margin: 0;
-    }
-
-    .content {
-        border: 1px solid red;
-        min-height: 352px;
-        display: table;
-        width: 100%;
-    }
-
-    .content .columns {
-        display: table-cell;
-        vertical-align: middle;
-        float: none;
-    }
-
-    .quotes { 
-        font-family: $font-source-sans-pro-semibold;
-        font-weight: 800 ;
-        color: #0d426a;
-    }
-
-    .quotes.pull-right {
-        text-align: right;
-    }
-
-    .text { 
-        font-weight: bold;
-        color: #ffffff;
-        font-size: 26px;
-    }
-
-    .authorName { 
-        font-family: "Arial";
-        font-weight: bold;
-        color: #fff02a;
-        font-size: 22px;
-    }
-
-    .authorTitle { 
-        font-weight: normal;
-        color: #fff02a;
-    }
-
-}
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $breakpoint-tablet) {
     /* For tablets: */    
 
-    .quote  {
-        .quotes { 
-            font-size: 160px;
+    .Quote {
+
+        &-Content {            
+            &-text { 
+                font-size: 32px;
+                line-height: 40px;
+            }
+            &-authorName { 
+                font-size: 22px;
+                line-height: 26px;
+            }
+            &-authorTitle { 
+                font-size: 16px;
+                line-height: 22px;
+            }   
         }
-        .text { 
-            font-size: 38px;
-        }
-        .authorName { 
-            font-size: 26px;
-        }
-        .authorTitle { 
-            font-size: 18px;
-        }        
     }
 
 }
-@media only screen and (min-width: 1024px) {
+
+@media only screen and (min-width: $breakpoint-desktop) {
     /* For desktop: */
     
-    .quote  {
-        padding-left: $menu-width;
-
-        .quotes { 
-            font-size: 150px;
+    .Quote {
+        &-Content {            
+            &-text { 
+                font-size: 48px;
+                line-height: 56px;
+            }
+            &-authorName { 
+                font-size: 24px;
+                line-height: 32px;
+            }
+            &-authorTitle { 
+                font-size: 16x;
+                line-height: 22px;
+            }  
         }
-        .text { 
-            font-size: 36px;
-        }
-        .authorName { 
-            font-size: 26px;
-        }
-        .authorTitle { 
-            font-size: 18px;
-        }
-    }
-    
-    //MENU TESTING
-    .menu {
-        height: 100vh;
-        width: $menu-width;
-        text-align: left;
     }
 
 }

@@ -2,6 +2,7 @@
   "id": "main",
   "priority": 5,
   "assets": [
+    "/images/doubleQuotes.svg",
     "/fonts/HurmeGeometricSans3/HurmeGeometricSans3-Bold.otf",
     "/fonts/HurmeGeometricSans3/HurmeGeometricSans3-Bold.ttf",
     "/fonts/SourceSansPro/SourceSansPro-Regular.otf",
