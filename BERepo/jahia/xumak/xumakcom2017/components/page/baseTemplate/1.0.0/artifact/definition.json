@@ -1,0 +1,31 @@
+{
+  "title": "Base Template",
+  "description": "The base template from where the content templates should inherit",
+  "name": "baseTemplate",
+  "address": "xumak:xumakcom2017:components:page:baseTemplate",
+  "version": "1.0.0",
+  "abstract": false,
+  "tags": ["xumakcom2017", "base"],
+  "jahia": {
+    "mixins": ["jnt:template"],
+    "config": {
+      "xk_clientModelProperties": [
+        "content",
+        "styling"
+      ],
+      "xk_containerClasses": [
+        "xk-component",
+        "xk-section-base"
+      ],
+      "xk_componentCategory": [
+        "design",
+        "global",
+        "content",
+        "styling",
+        "component",
+        "page"
+      ],
+      "xk_clientAccessible": false
+    }
+  }
+}
