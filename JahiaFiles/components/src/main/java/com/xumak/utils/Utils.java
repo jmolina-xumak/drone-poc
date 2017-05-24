@@ -1,12 +1,23 @@
 package com.xumak.utils;
 
 import layerx.jahia.templating.TemplateContentModel;
+import org.apache.commons.lang3.StringUtils;
+import org.jahia.services.content.JCRItemWrapper;
+import org.jahia.services.content.JCRNodeWrapper;
+import org.jahia.services.content.JCRSessionWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.Node;
+import javax.jcr.PropertyIterator;
+import javax.jcr.RepositoryException;
+import java.util.HashMap;
 import java.util.Map;
 
 import static layerx.Constants.RESOURCE_CONTENT_KEY;
+import static layerx.jahia.Constants.NODE_COLON_SEPARATOR;
+import static org.jahia.api.Constants.JCR_PATH;
+import static org.jahia.api.Constants.JCR_UUID;
 
 /**
  * DESCRIPTION
@@ -74,5 +85,76 @@ public class Utils {
         }
         return property;
     }
+
+    /**
+     * This method is used to return the path of the resource using JCRNodeWrapper to get the path of the resource
+     * according to the different workspace tha Jahia has.
+     * @param session             The object to get the node from its UUID.
+     * @param resourceNodeUUID    The UUID of the resource.
+     * @author mcali
+     * */
+    public static String getResourceNodePath(final JCRSessionWrapper session, final String resourceNodeUUID) {
+        String resourcePath = "";
+        try {
+            if (StringUtils.isNotEmpty(resourceNodeUUID)) {
+                JCRNodeWrapper resourceNode = session.getNodeByIdentifier(resourceNodeUUID);
+                resourcePath = resourceNode.getUrl();
+            }
+        } catch (RepositoryException repException) {
+            LOGGER.error("An error occurred in the repository " + repException.toString());
+        }
+        return resourcePath;
+    }
+
+    /**
+     *
+     * Retrieves the properties of a given page node
+     * @param node
+     * @param jcrSessionWrapper
+     * @return a map of all properties
+     * @throws RepositoryException
+     */
+    public static Map<String, Object>
+    getPageProperties(final JCRNodeWrapper node, final JCRSessionWrapper jcrSessionWrapper) throws RepositoryException {
+        Map<String, Object> map = new HashMap();
+
+        if (null != node) {
+            PropertyIterator propertyIterator = node.getProperties();
+
+            while (null != propertyIterator && propertyIterator.hasNext()) {
+                javax.jcr.Property property = propertyIterator.nextProperty();
+                if (property.isMultiple()) continue;
+
+                String propertyStr = property.getValue().getString();
+                String name = property.getName();
+
+                if (name.equals(JCR_UUID)) {
+                    propertyStr = getResourceNodePath(jcrSessionWrapper, propertyStr);
+                    name = JCR_PATH;
+                }
+
+                if (StringUtils.isNotBlank(name) && name.contains(NODE_COLON_SEPARATOR)) {
+                    name = escapeColonChar(name);
+                }
+                map.put(name, propertyStr);
+            }
+        }
+        return map;
+    }
+
+    /**
+     * Escapes the ':' e.g. j:templateName by jTemplateName
+     * @param property
+     * @return a string without ':' character
+     */
+    public static String escapeColonChar(final String property){
+        String name = property;
+        int indexToUpperCase = name.indexOf(NODE_COLON_SEPARATOR) + 1;
+        String charToReplace = name.substring(indexToUpperCase, indexToUpperCase + 1);
+        String charInUpperCase = charToReplace.toUpperCase();
+        name = name.replaceFirst(charToReplace, charInUpperCase);
+        name = name.replace(NODE_COLON_SEPARATOR, "");
+        return name;
+    }     
 
 }
