@@ -16,19 +16,5 @@
     &-authorTitle { 
         color: $color-quoteAccent;
     }
-
-    &-IconsRow {
-
-        .icon {
-            
-            &-dblquotes {
-                background-image: url(/assets/main/images/doubleQuotes.svg);
-                
-                &--reverse {
-                    background-image: url(/assets/main/images/doubleQuotes.svg);
-                }
-            }
-        }
-    }
     
 }
