@@ -3,7 +3,7 @@
 // Use Bliss.
 // Don't specify colors properties.
 .MainNavigation {
-    //component
+
     &-component {
         height: 100%;
         position: fixed;
@@ -121,7 +121,6 @@
             to {width: 0 }
         }
 
-        //component
         &-component {
             width: 240px;
             right: auto;

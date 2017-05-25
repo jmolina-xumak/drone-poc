@@ -86,7 +86,6 @@ Vue.component('mainNavigation', function mainNavCreator(resolve, reject) {
                     }
                 },
                 mouseLeave: function(item, el){
-                    console.log('el', $(el.target).find('.MainNavigation-link').removeClass('isActive'));
                     if(item.hasChildren && $(window).width() > 1224) {  
                         $('.MainNavigation-subList.isExpanded').css({
                             'animation':'out .5s ease forwards'
