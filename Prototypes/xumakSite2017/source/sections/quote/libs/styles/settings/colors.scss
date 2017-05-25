@@ -2,12 +2,6 @@
 // Define colors here
 // Please use default sass reserved keyword.
 
-$background: #fafafa !default;
-
-$external-menu-width: 200px;
-
-$Quote-color--text: #fff;
-$Quote-color--accent: #fff02a;
-$Quote-color--background: #199fbc;
-$Quote-text--regular: $font-hurme-geometric-sans-bold;
-$Quote-text--subtle: $font-source-sans-pro-semibold;
+$color-quoteText: $color-white;
+$color-quoteAccent: $color-broom;
+$color-quoteBackground: $color-eastern-blue;

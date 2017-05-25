@@ -3,34 +3,18 @@
 // Use Bliss.
 
 .Quote{ 
-    background-color: $Quote-color--background;
+    background-color: $color-quoteBackground;
 
-    &-Content {
+    &-text {         
+        color: $color-quoteText;
+    }
 
-        &-text {         
-            color: $Quote-color--text;
-            font-family: $Quote-text--regular;
-            font-weight: 800;
-            font-size: 26px;
-            line-height: 32px;
-        }
+    &-authorName { 
+        color: $color-quoteAccent;
+    }
 
-        &-authorName { 
-            color: $Quote-color--accent;
-            font-family: $Quote-text--regular;
-            font-weight: 800;
-            font-size: 16px;
-            line-height: 22px;
-        }
-
-        &-authorTitle { 
-            color: $Quote-color--accent;
-            font-family: $Quote-text--subtle;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 22px;
-        }
-        
+    &-authorTitle { 
+        color: $color-quoteAccent;
     }
 
     &-IconsRow {
@@ -47,49 +31,4 @@
         }
     }
     
-}
-
-@media only screen and (min-width: $breakpoint-tablet) {
-    /* For tablets: */    
-
-    .Quote {
-
-        &-Content {            
-            &-text { 
-                font-size: 32px;
-                line-height: 40px;
-            }
-            &-authorName { 
-                font-size: 22px;
-                line-height: 26px;
-            }
-            &-authorTitle { 
-                font-size: 16px;
-                line-height: 22px;
-            }   
-        }
-    }
-
-}
-
-@media only screen and (min-width: $breakpoint-desktop) {
-    /* For desktop: */
-    
-    .Quote {
-        &-Content {            
-            &-text { 
-                font-size: 48px;
-                line-height: 56px;
-            }
-            &-authorName { 
-                font-size: 24px;
-                line-height: 32px;
-            }
-            &-authorTitle { 
-                font-size: 16x;
-                line-height: 22px;
-            }  
-        }
-    }
-
 }
