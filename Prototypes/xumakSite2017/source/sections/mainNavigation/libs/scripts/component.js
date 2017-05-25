@@ -21,7 +21,7 @@ Vue.component('mainNavigation', function mainNavCreator(resolve, reject) {
             },
             methods: {
                 toggleSubMenu: function(item){
-                    if(item.hasChildren){
+                    if(item.hasChildren && $(window).width() < 1224){
                         let isExpanded = !item.isExpanded;
 
                         this.menu.pages = this.menu.pages.map(function(el){
@@ -52,32 +52,48 @@ Vue.component('mainNavigation', function mainNavCreator(resolve, reject) {
                     }
                 },
                 mouseIn: function() {
-                    $('.MainNavigation').addClass('isSlidedIn').removeClass('isSlidedOut');
+                    if($(window).width() > 1224) {
+                        $('.MainNavigation').addClass('isSlidedIn').removeClass('isSlidedOut');
+                        if($('.MainNavigation-overlay').length > 0){
+                                return false;
+                        } else {
+                            $('<div class="MainNavigation-overlay"/>').appendTo('body').animate({
+                                opacity: .8
+                            }, 500);
+                        }
+                    }
                 },
                 mouseOut: function(){
-                    $('.MainNavigation').addClass('isSlidedOut').removeClass('isSlidedIn');    
-                },
-                mouseEnter: function(item){
-                    
-                    if(item.hasChildren) {
-                        $('.MainNavigation-subList.isExpanded').css({
-                            'animation':'in .5s .3s ease forwards'
+                    if($(window).width() > 1224) { 
+                        $('.MainNavigation').addClass('isSlidedOut').removeClass('isSlidedIn');    
+                        
+                        $('.MainNavigation-overlay').animate({
+                            opacity: 0
+                        }, 500, function() {
+                            $(this).remove();
                         });
+                    }
+                },
+                mouseEnter: function(item, el){
+                    if(item.hasChildren && $(window).width() > 1224) {
+                        var listItem = $(el.target).parents('.MainNavigation-item');
+                        $(el.target).parents('.MainNavigation-item').find('.MainNavigation-link').addClass('isActive');
+                        $(listItem[0]).find('.MainNavigation-subList').addClass('isExpanded').css({
+                            'animation':'in .5s .3s ease forwards'
+                        });;
                     } else {
                         return false;
                     }
-
                 },
-                mouseLeave: function(item){
-
-                    if(item.hasChildren) {
+                mouseLeave: function(item, el){
+                    console.log('el', $(el.target).find('.MainNavigation-link').removeClass('isActive'));
+                    if(item.hasChildren && $(window).width() > 1224) {  
                         $('.MainNavigation-subList.isExpanded').css({
                             'animation':'out .5s ease forwards'
                         });
                     } else {
                         return false;
                     }
-
                 }
             }
         })

@@ -1,9 +1,4 @@
 <div class="MainNavigation isSlidedOut" v-bind:class="{isVisible: menu.isVisible}">
-    <button class="MainNavigation-menuButton" 
-            v-on:click="toggleMenu"
-            v-bind:class="{isVisible: menu.isVisible}">
-        click me
-    </button>
     <svg style="width: 15px; height: 15px; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <symbol id="icon-close" viewBox="0 0 24 24">
@@ -12,9 +7,22 @@
             </symbol>
         </defs>
     </svg>
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <symbol id="icon-menu" viewBox="0 0 15 15">
+                <title>menu</title>
+                <path d="M1.875 3.125h11.25q0.259 0 0.442 0.183t0.183 0.442-0.183 0.442-0.442 0.183h-11.25q-0.259 0-0.442-0.183t-0.183-0.442 0.183-0.442 0.442-0.183zM1.875 10.625h11.25q0.259 0 0.442 0.183t0.183 0.442-0.183 0.442-0.442 0.183h-11.25q-0.259 0-0.442-0.183t-0.183-0.442 0.183-0.442 0.442-0.183zM1.875 6.875h11.25q0.259 0 0.442 0.183t0.183 0.442-0.183 0.442-0.442 0.183h-11.25q-0.259 0-0.442-0.183t-0.183-0.442 0.183-0.442 0.442-0.183z"></path>
+            </symbol>
+        </defs>
+    </svg>
     <div class="MainNavigation-closeBox">
         <button v-on:click="toggleMenu" class=" MainNavigation-closeButton">
             <svg  class="icon icon-close MainNavigation-iconClose"><use xlink:href="#icon-close"></use></svg>
+        </button>
+        <button class=" MainNavigation-menuButton"
+                v-on:click="toggleMenu"
+                v-bind:class="{isVisible: menu.isVisible}">
+            <svg class="icon icon-menu MainNavigation-iconMenu"><use xlink:href="#icon-menu"></use></svg>
         </button>
     </div>
 
@@ -25,8 +33,8 @@
         v-on:mouseover="mouseIn"
         v-on:mouseleave="mouseOut">
         <li class="MainNavigation-item" v-for="item in menu.pages"
-            v-on:mouseover="mouseEnter(item)"
-            v-on:mouseleave="mouseLeave(item)">
+            v-on:mouseover="mouseEnter(item, $event)"
+            v-on:mouseleave="mouseLeave(item, $event)">
             <a class="MainNavigation-link" 
                v-bind:href="item.hasChildren ? '#' : item.link" 
                v-on:click="toggleSubMenu(item)" 

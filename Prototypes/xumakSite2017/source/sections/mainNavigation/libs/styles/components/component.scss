@@ -3,7 +3,11 @@
 // Use Bliss.
 .MainNavigation {
     background-color: $main-background;
-    
+    &-link path,
+    &-iconClose,
+    &-iconMenu {
+        fill: $background;
+    }
     &-link,
     &-description {
         color: $text-color;
