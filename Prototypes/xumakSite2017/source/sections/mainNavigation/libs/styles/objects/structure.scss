@@ -164,6 +164,9 @@
             display: block;
             margin-bottom: 8px
         }
+        &-arrow {
+            transform: rotate(180deg);
+        }
     }
 
     /*--- States ---*/

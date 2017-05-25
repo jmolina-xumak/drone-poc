@@ -37,11 +37,14 @@ Vue.component('mainNavigation', function mainNavCreator(resolve, reject) {
                 },
                 toggleMenu: function() {
                     this.menu.isVisible = !this.menu.isVisible;
-  
+                    
+                    var self = this;
                     if ( this.menu.isVisible ) {
                         $('<div class="MainNavigation-overlay"/>').appendTo('body').animate({
                             opacity: .8
-                        }, 500);
+                        }, 500).on('click', function(){
+                            self.toggleMenu();
+                        })
                       
                     } else {
                         $('.MainNavigation-overlay').animate({
@@ -87,6 +90,7 @@ Vue.component('mainNavigation', function mainNavCreator(resolve, reject) {
                 },
                 mouseLeave: function(item, el){
                     if(item.hasChildren && $(window).width() > 1224) {  
+                        $(el.target).find('.MainNavigation-link').removeClass('isActive');
                         $('.MainNavigation-subList.isExpanded').css({
                             'animation':'out .5s ease forwards'
                         });
