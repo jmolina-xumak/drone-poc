@@ -53,7 +53,7 @@ Vue.component('mainNavigation', function mainNavCreator(resolve, reject) {
                 },
                 mouseIn: function() {
                     if($(window).width() > 1224) {
-                        $('.MainNavigation').addClass('isSlidedIn').removeClass('isSlidedOut');
+                        $('.MainNavigation-component').addClass('isSlidedIn').removeClass('isSlidedOut');
                         if($('.MainNavigation-overlay').length > 0){
                                 return false;
                         } else {
@@ -65,7 +65,7 @@ Vue.component('mainNavigation', function mainNavCreator(resolve, reject) {
                 },
                 mouseOut: function(){
                     if($(window).width() > 1224) { 
-                        $('.MainNavigation').addClass('isSlidedOut').removeClass('isSlidedIn');    
+                        $('.MainNavigation-component').addClass('isSlidedOut').removeClass('isSlidedIn');    
                         
                         $('.MainNavigation-overlay').animate({
                             opacity: 0

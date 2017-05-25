@@ -2,7 +2,10 @@
 // Define the component colors and themes here
 // Use Bliss.
 .MainNavigation {
-    background-color: $main-background;
+    &-component{
+        background-color: $main-background;
+    }
+        
     &-link path,
     &-iconClose,
     &-iconMenu {
@@ -21,12 +24,14 @@
 
     @media(min-width: $breakpoint-desktop){
         
-        background-color: transparent;
+        &-component {
+            background-color: transparent;
+        }
 
         /* ---  States --- */
 
-        &.isSlidedIn,
-        &.isSlidedOut {
+        &-component.isSlidedIn,
+        &-component.isSlidedOut {
             background-image: linear-gradient(to left, transparent, transparent 50%, $main-background 50%, $main-background);
         }
         

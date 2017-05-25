@@ -3,14 +3,17 @@
 // Use Bliss.
 // Don't specify colors properties.
 .MainNavigation {
-    height: 100%;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 9999;
-    right: -100%;
-    transition: all .5s ease;
+    //component
+    &-component {
+        height: 100%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 9999;
+        right: -100%;
+        transition: all .5s ease;
+    }
 
     &-logoBox {
         padding-left: 20px;
@@ -101,7 +104,9 @@
     }
     /* --- Tablet --- */
     @media(min-width:$breakpoint-tablet) {
-        width: 335px;
+        &-component {
+            width: 335px;
+        }
     }
 
     /* --- Desktop --- */
@@ -116,11 +121,14 @@
             to {width: 0 }
         }
 
-        width: 240px;
-        right: auto;
-        left: 0;
-        transition: all .25s ease;  
-        background-size: 200% 100%;
+        //component
+        &-component {
+            width: 240px;
+            right: auto;
+            left: 0;
+            transition: all .25s ease;  
+            background-size: 200% 100%;
+        }
 
         &-logoBox {
             display: none;
@@ -160,14 +168,14 @@
     }
 
     /*--- States ---*/
-    &.isSlidedIn {
+    &-component.isSlidedIn {
         background-position: 0 0;
     }
-    &.isSlidedOut{
+    &-component.isSlidedOut{
         background-position: 100% 0;
     }
 
-    &.isVisible {
+    &-component.isVisible {
         right: 0;
     }
     &-menuButton.isVisible {
@@ -187,7 +195,7 @@
 
     /* --- States Breakpoints --- */
     @media(min-width: $breakpoint-desktop) {
-        &.isVisible {
+        &-component.isVisible {
             right: auto;
         }  
     }
