@@ -1,4 +1,5 @@
-image: dockerfile/nginx
-script:
-  - echo helloooooo!!!
-1
+pipeline:
+  build:
+   image: registry.xumak.gt:5000/xumak/maven:3.3.9-jdk8
+   commands:
+    - mvn clean install
